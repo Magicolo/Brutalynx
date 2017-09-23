@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class BossBase : MonoBehaviour
+public abstract class BossBase : MonoBehaviour
 {
 	public enum Statuses
 	{
@@ -9,6 +9,8 @@ public class BossBase : MonoBehaviour
 		Furious = 1,
 		Happy = 2,
 	}
+
+	public abstract bool IsDone { get; }
 
 	public Statuses Status;
 	public Animator Animator;

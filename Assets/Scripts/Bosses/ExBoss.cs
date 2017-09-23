@@ -9,12 +9,19 @@ public class ExBoss : BossBase
 		WaitingConsumption1,
 		DudeDialog1,
 		ExDialog2,
+		Done
 	}
 
 	public CanvasGroup Group;
 	public string[] ExFuriousDialog1;
 	public string[] ExDialog1;
 	public string[] DudeDialog1;
+	public States State;
+
+	public override bool IsDone
+	{
+		get { return State == States.Done; }
+	}
 
 	void OnEnable()
 	{
@@ -44,5 +51,7 @@ public class ExBoss : BossBase
 				// and so on.
 				break;
 		}
+
+		State = state;
 	}
 }

@@ -9,8 +9,8 @@ public class Dialog : MonoBehaviour
 	public event Action OnDespawned = () => { };
 
 	public Text Text;
-	public double ScaleTime;
-	public double TypewriterSpeed;
+	public float ScaleTime;
+	public float TypewriterSpeed;
 
 	public void Display(params string[] lines)
 	{
@@ -21,9 +21,9 @@ public class Dialog : MonoBehaviour
 	{
 		Text.text = "";
 
-		for (double i = 0; i < ScaleTime; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
+		for (float i = 0; i < ScaleTime; i += Time.deltaTime)
 		{
-			transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, (float)(i / ScaleTime));
+			transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, i / ScaleTime);
 			yield return null;
 		}
 
@@ -37,17 +37,19 @@ public class Dialog : MonoBehaviour
 			for (int i = 0; i < line.Length; i++)
 			{
 				Text.text += line[i];
-				yield return new WaitForSeconds((float)(TimelineManager.Instance.DeltaTime.TotalSeconds / TypewriterSpeed));
+
+				for (float delay = 0; delay < 1f / TypewriterSpeed; delay += Time.deltaTime)
+					yield return null;
 			}
 
 			while (!Input.GetKeyDown(KeyCode.Mouse0)) yield return null;
 		}
 
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(2f);
 
-		for (double i = 0; i < ScaleTime; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
+		for (float i = 0; i < ScaleTime; i += Time.deltaTime)
 		{
-			transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, (float)(i / ScaleTime));
+			transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, i / ScaleTime);
 			yield return null;
 		}
 

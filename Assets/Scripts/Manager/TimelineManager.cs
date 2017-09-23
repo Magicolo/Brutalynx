@@ -11,6 +11,7 @@ public struct TimelineEvent
 public class TimelineManager : Singleton<TimelineManager>
 {
 	public TimelineEvent[] Events;
+
 	public readonly List<EventBase> ActiveEvents = new List<EventBase>();
 	public readonly List<EventBase> PastEvents = new List<EventBase>();
 

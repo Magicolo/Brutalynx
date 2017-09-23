@@ -12,6 +12,7 @@ public class Door : Singleton<Door>
 
 	public GameObject Opened;
 	public GameObject Closed;
+	public float FadeTime;
 	public States State;
 
 	public void Open()
@@ -46,9 +47,9 @@ public class Door : Singleton<Door>
 		Open();
 		yield return null;
 
-		for (double i = 0; i < 90d; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
+		for (float counter = 0; counter < FadeTime; counter += Time.deltaTime)
 		{
-			group.alpha = (float)(i / 90d);
+			group.alpha = counter / FadeTime;
 			yield return null;
 		}
 
@@ -64,9 +65,9 @@ public class Door : Singleton<Door>
 		Open();
 		yield return null;
 
-		for (double i = 90d; i > 0; i -= TimelineManager.Instance.DeltaTime.TotalSeconds)
+		for (float counter = 0; counter < FadeTime; counter += Time.deltaTime)
 		{
-			group.alpha = (float)(i / 90d);
+			group.alpha = 1f - counter / FadeTime;
 			yield return null;
 		}
 
