@@ -53,11 +53,11 @@ public class Telephone : Singleton<Telephone>
 		while (State == States.Ringing)
 		{
 			// Delay of 30 seconds.
-			for (double i = 0f; i < 90f && State == States.Ringing; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
+			for (double i = 0f; i < 450f && State == States.Ringing; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
 				yield return null;
 
 			// Shake for 30 seconds.
-			for (double i = 0f; i < 30f && State == States.Ringing; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
+			for (double i = 0f; i < 90f && State == States.Ringing; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
 			{
 				transform.position = position + (Vector3)UnityEngine.Random.insideUnitCircle * ShakeAmplitude;
 				yield return null;

@@ -32,7 +32,7 @@ public class Door : Singleton<Door>
 
 	public void Exit(CanvasGroup group, Action done)
 	{
-
+		StartCoroutine(ExitRoutine(group, done));
 	}
 
 	void Update()
@@ -54,6 +54,21 @@ public class Door : Singleton<Door>
 			yield return null;
 		}
 
+		group.alpha = 1f;
+		done();
+	}
+
+	IEnumerator ExitRoutine(CanvasGroup group, Action done)
+	{
+		group.alpha = 1f;
+
+		for (double i = 90d; i > 0; i -= TimelineManager.Instance.DeltaTime.TotalSeconds)
+		{
+			group.alpha = (float)(i / 90d);
+			yield return null;
+		}
+
+		group.alpha = 0f;
 		done();
 	}
 }

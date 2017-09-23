@@ -14,7 +14,7 @@ public class TimelineManager : Singleton<TimelineManager>
 	public readonly List<EventBase> ActiveEvents = new List<EventBase>();
 	public readonly List<EventBase> PastEvents = new List<EventBase>();
 
-	public float TimeScale { get { return 30f; } }
+	public float TimeScale { get { return 300f; } }
 	public TimeSpan Time { get; private set; }
 	public TimeSpan DeltaTime { get { return TimeSpan.FromSeconds(UnityEngine.Time.deltaTime * TimeScale); } }
 
