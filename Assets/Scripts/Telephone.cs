@@ -18,9 +18,8 @@ public class Telephone : Singleton<Telephone>
 	}
 
 	public float ShakeAmplitude = 1f;
-
-	public States State { get; private set; }
-	public Callers Caller { get; private set; }
+	public States State;
+	public Callers Caller;
 
 	public void Ring(Callers caller)
 	{
@@ -54,13 +53,13 @@ public class Telephone : Singleton<Telephone>
 		while (State == States.Ringing)
 		{
 			// Delay of 30 seconds.
-			for (double i = 0f; i < 90f; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
+			for (double i = 0f; i < 90f && State == States.Ringing; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
 				yield return null;
 
 			// Shake for 30 seconds.
-			for (double i = 0f; i < 30f; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
+			for (double i = 0f; i < 30f && State == States.Ringing; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
 			{
-				transform.position = position + (Vector3)Random.insideUnitCircle * ShakeAmplitude;
+				transform.position = position + (Vector3)UnityEngine.Random.insideUnitCircle * ShakeAmplitude;
 				yield return null;
 			}
 
