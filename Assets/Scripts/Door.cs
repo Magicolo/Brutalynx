@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Door : Singleton<Door>
 {
@@ -11,8 +10,8 @@ public class Door : Singleton<Door>
 		Closed
 	}
 
-	public Image Opened;
-	public Image Closed;
+	public GameObject Opened;
+	public GameObject Closed;
 	public States State;
 
 	public void Open()
@@ -37,16 +36,15 @@ public class Door : Singleton<Door>
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.O)) Open();
-		if (Input.GetKeyDown(KeyCode.C)) Close();
-
-		Opened.gameObject.SetActive(State == States.Opened);
-		Closed.gameObject.SetActive(State == States.Closed);
+		Opened.SetActive(State == States.Opened);
+		Closed.SetActive(State == States.Closed);
 	}
 
 	IEnumerator EnterRoutine(CanvasGroup group, Action done)
 	{
 		group.alpha = 0f;
+		Open();
+		yield return null;
 
 		for (double i = 0; i < 90d; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
 		{
@@ -55,12 +53,16 @@ public class Door : Singleton<Door>
 		}
 
 		group.alpha = 1f;
+		Close();
+		yield return null;
 		done();
 	}
 
 	IEnumerator ExitRoutine(CanvasGroup group, Action done)
 	{
 		group.alpha = 1f;
+		Open();
+		yield return null;
 
 		for (double i = 90d; i > 0; i -= TimelineManager.Instance.DeltaTime.TotalSeconds)
 		{
@@ -69,6 +71,8 @@ public class Door : Singleton<Door>
 		}
 
 		group.alpha = 0f;
+		Close();
+		yield return null;
 		done();
 	}
 }

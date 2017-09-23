@@ -37,7 +37,7 @@ public class WifeEvent : EventBase
 		{
 			case States.WaitingConsumption:
 				if (MushroomManager.Instance.History.Count > _count)
-					SetState(States.WifeExiting);
+					SetState(States.WifeBubble2);
 				break;
 		}
 	}
@@ -49,12 +49,11 @@ public class WifeEvent : EventBase
 			case States.WifeEntering:
 				_wife = Instantiate(WifePrefab, UIManager.Instance.Canvas.transform);
 				_wife.transform.position = Door.Instance.transform.position;
-				Door.Instance.Open();
 				Door.Instance.Enter(_wife.GetComponentInChildren<CanvasGroup>(), () => SetState(States.WifeBubble1));
 				break;
 			case States.WifeBubble1:
 				{
-					var dialog = DialogManager.Instance.Spawn("Hey mouche-taureau!", _wife.transform.position);
+					var dialog = DialogManager.Instance.Spawn("Hey mouche-taureau!", _wife.transform.position, Characters.NPC);
 					dialog.OnDespawned += () => SetState(States.WaitingConsumption);
 					break;
 				}
@@ -66,8 +65,8 @@ public class WifeEvent : EventBase
 					var text = PlayerManager.Instance.IsDepressed ?
 						"Cabarnoulesque! Ben tousquain le malin?" :
 						"Honorifique gastongay.";
-					var dialog = DialogManager.Instance.Spawn(text, _wife.transform.position);
-					dialog.OnDespawned += () => SetState(States.WaitingChoice);
+					var dialog = DialogManager.Instance.Spawn(text, _wife.transform.position, Characters.NPC);
+					dialog.OnDespawned += () => SetState(States.WifeBubble3);
 					break;
 				}
 			case States.WaitingChoice:
@@ -75,16 +74,12 @@ public class WifeEvent : EventBase
 				break;
 			case States.WifeBubble3:
 				{
-					var dialog = DialogManager.Instance.Spawn("Rachidien McSween", _wife.transform.position);
+					var dialog = DialogManager.Instance.Spawn("Rachidien McSween", _wife.transform.position, Characters.NPC);
 					dialog.OnDespawned += () => SetState(States.WifeExiting);
 					break;
 				}
 			case States.WifeExiting:
-				Door.Instance.Exit(_wife.GetComponentInChildren<CanvasGroup>(), () =>
-				{
-					SetState(States.Done);
-					Door.Instance.Close();
-				});
+				Door.Instance.Exit(_wife.GetComponentInChildren<CanvasGroup>(), () => SetState(States.Done));
 				break;
 		}
 
