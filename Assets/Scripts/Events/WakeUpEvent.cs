@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class TelephoneEvent : EventBase
+public class WakeUpEvent : EventBase
 {
 	public override bool IsDone
 	{

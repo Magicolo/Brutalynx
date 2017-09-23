@@ -45,14 +45,14 @@ public class StateBar : MonoBehaviour {
     {
         switch (status)
         {
-            case Status.Drunkness:
-                SetState(PlayerManager.Instance.Drunkness);
+            case Status.Confidence:
+                SetState(PlayerManager.Instance.Confidence);
                 break;
             case Status.Happiness:
                 SetState(PlayerManager.Instance.Happiness);
                 break;
-            case Status.Boredom:
-                SetState(PlayerManager.Instance.Boredom);
+            case Status.Alertness:
+                SetState(PlayerManager.Instance.Alertness);
                 break;
         }
     }
