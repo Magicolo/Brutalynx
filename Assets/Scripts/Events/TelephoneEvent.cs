@@ -1,12 +1,19 @@
-﻿using System;
-
-public class TelephoneEvent : EventBase
+﻿public class TelephoneEvent : EventBase
 {
-	public override bool IsDone
+	public override bool IsDone { get { return Telephone.Instance.State == Telephone.States.Idle; } }
+
+	void OnEnable()
 	{
-		get
+		Telephone.Instance.Ring(Callers.Mom);
+	}
+
+	void Update()
+	{
+		if (Telephone.Instance.State == Telephone.States.Answered)
 		{
-			throw new NotImplementedException();
+			// Spawn dé bubbles...
 		}
+		else if (Telephone.Instance.State == Telephone.States.Cancelled)
+			Telephone.Instance.Reset();
 	}
 }
