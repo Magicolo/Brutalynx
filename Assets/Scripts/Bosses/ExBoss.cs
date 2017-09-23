@@ -12,6 +12,7 @@ public class ExBoss : BossBase
 	}
 
 	public CanvasGroup Group;
+	public string[] ExFuriousDialog1;
 	public string[] ExDialog1;
 	public string[] DudeDialog1;
 
@@ -28,7 +29,10 @@ public class ExBoss : BossBase
 				Door.Instance.Enter(Group, () => SetState(States.ExDialog1));
 				break;
 			case States.ExDialog1:
-				Speak(ExDialog1, () => SetState(States.WaitingConsumption1));
+				if (Status == Statuses.Furious)
+					Speak(ExDialog1, () => SetState(States.WaitingConsumption1));
+				else
+					Speak(ExFuriousDialog1, () => SetState(States.WaitingConsumption1));
 				break;
 			case States.WaitingConsumption1:
 				MushroomManager.Instance.WaitConsumption(m => SetState(States.DudeDialog1));
