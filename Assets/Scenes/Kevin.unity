@@ -289,18 +289,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114733454687160072, guid: 24b1337b8cac8634990b0910eae95e8f,
-        type: 2}
-      propertyPath: NPCDialog
-      value: 
-      objectReference: {fileID: 114307441476115014, guid: c10df55579f5b3647ae49f1a562f3414,
-        type: 2}
-    - target: {fileID: 114733454687160072, guid: 24b1337b8cac8634990b0910eae95e8f,
-        type: 2}
-      propertyPath: PlayerDialog
-      value: 
-      objectReference: {fileID: 114307441476115014, guid: 9aee39297bdd8b94095c785ef75f7012,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24b1337b8cac8634990b0910eae95e8f, type: 2}
   m_IsPrefabParent: 0
@@ -471,12 +459,12 @@ Prefab:
     - target: {fileID: 224716635417286428, guid: d677e000f0ff211419202ca4495348c8,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 27.9
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 224716635417286428, guid: d677e000f0ff211419202ca4495348c8,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 8.1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224716635417286428, guid: d677e000f0ff211419202ca4495348c8,
         type: 2}
