@@ -29,6 +29,12 @@ public class Telephone : Singleton<Telephone>
 		StartCoroutine(RingRoutine());
 	}
 
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.U))
+			Answer();
+	}
+
 	public void Answer()
 	{
 		State = States.Answered;
@@ -39,11 +45,6 @@ public class Telephone : Singleton<Telephone>
 	public void Cancel()
 	{
 		State = States.Cancelled;
-	}
-
-	public void Reset()
-	{
-		State = States.Idle;
 	}
 
 	IEnumerator RingRoutine()

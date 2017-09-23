@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class MushroomManager : Singleton<MushroomManager>
 {
-	readonly Stack<Mushrooms> _history = new Stack<Mushrooms>();
+	public readonly Stack<Mushrooms> History = new Stack<Mushrooms>();
 
 	public void Consume(Mushrooms mushroom)
 	{
@@ -67,7 +67,7 @@ public class MushroomManager : Singleton<MushroomManager>
 				break;
 		}
 
-		_history.Push(mushroom);
+		History.Push(mushroom);
 	}
 }
 
