@@ -47,10 +47,10 @@
 			case States.WaitChoice:
 				// Spawn the menu.
 				break;
-			case States.TelephoneBubble1:
-				var dialog = DialogManager.Instance.Spawn("Simon le cavalier grandissime.", Telephone.Instance.transform.position, Characters.NPC);
-				dialog.OnDespawned += () => SetState(States.Done);
-				break;
+				//case States.TelephoneBubble1:
+				//	//var dialog = DialogManager.Instance.Spawn(new string[] { "Simon le cavalier grandissime." }, Telephone.Instance.transform.position, Characters.NPC);
+				//	dialog.OnDespawned += () => SetState(States.Done);
+				//	break;
 		}
 
 		State = state;

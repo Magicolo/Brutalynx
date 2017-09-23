@@ -5,6 +5,8 @@ public class MushroomManager : Singleton<MushroomManager>
 {
 	public readonly Stack<Mushrooms> History = new Stack<Mushrooms>();
 
+	Action<Mushrooms> listener = m => { };
+
 	public void Consume(Mushrooms mushroom)
 	{
 		switch (mushroom)
@@ -68,6 +70,13 @@ public class MushroomManager : Singleton<MushroomManager>
 		}
 
 		History.Push(mushroom);
+		listener(mushroom);
+		listener = m => { };
+	}
+
+	public void WaitConsumption(Action<Mushrooms> consumed)
+	{
+		listener += consumed;
 	}
 }
 

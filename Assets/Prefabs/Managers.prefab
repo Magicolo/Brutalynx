@@ -282,7 +282,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8af0e52f567e2d48afaa38393e4c92b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 114307441476115014, guid: c10df55579f5b3647ae49f1a562f3414, type: 2}
+  PlayerDialog: {fileID: 114307441476115014, guid: 9aee39297bdd8b94095c785ef75f7012,
+    type: 2}
+  NPCDialog: {fileID: 114307441476115014, guid: c10df55579f5b3647ae49f1a562f3414,
+    type: 2}
 --- !u!114 &114877582220028182
 MonoBehaviour:
   m_ObjectHideFlags: 1
