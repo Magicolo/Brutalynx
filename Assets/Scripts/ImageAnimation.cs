@@ -8,12 +8,18 @@ public class ImageAnimation : MonoBehaviour
 	public Image Image;
 	public double Speed;
 
-	void Start()
-	{
+    private void OnEnable()
+    {
 		StartCoroutine(AnimationRoutine());
-	}
 
-	IEnumerator AnimationRoutine()
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    IEnumerator AnimationRoutine()
 	{
 		yield return null;
 		yield return null;
