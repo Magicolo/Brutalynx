@@ -5,7 +5,11 @@ public class WifeEvent : EventBase
 	public enum States
 	{
 		WifeEntering,
+		WifeBubble1,
 		WaitingConsumption,
+		WifeBubble2,
+		WaitingChoice,
+		WifeBubble3,
 		WifeExiting,
 		Done
 	}
@@ -19,12 +23,7 @@ public class WifeEvent : EventBase
 
 	void OnEnable()
 	{
-		State = States.WifeEntering;
-		_count = MushroomManager.Instance.History.Count;
-		_wife = Instantiate(WifePrefab, UIManager.Instance.Canvas.transform);
-		_wife.transform.position = Door.Instance.transform.position;
-		Door.Instance.Open();
-		Door.Instance.Enter(_wife.GetComponentInChildren<CanvasGroup>(), () => State = States.WaitingConsumption);
+		SetState(States.WifeEntering);
 	}
 
 	void OnDisable()
@@ -38,15 +37,57 @@ public class WifeEvent : EventBase
 		{
 			case States.WaitingConsumption:
 				if (MushroomManager.Instance.History.Count > _count)
-				{
-					Door.Instance.Exit(_wife.GetComponentInChildren<CanvasGroup>(), () =>
-					{
-						State = States.Done;
-						Door.Instance.Close();
-					});
-					State = States.WifeExiting;
-				}
+					SetState(States.WifeExiting);
 				break;
 		}
+	}
+
+	void SetState(States state)
+	{
+		switch (state)
+		{
+			case States.WifeEntering:
+				_wife = Instantiate(WifePrefab, UIManager.Instance.Canvas.transform);
+				_wife.transform.position = Door.Instance.transform.position;
+				Door.Instance.Open();
+				Door.Instance.Enter(_wife.GetComponentInChildren<CanvasGroup>(), () => SetState(States.WifeBubble1));
+				break;
+			case States.WifeBubble1:
+				{
+					var dialog = DialogManager.Instance.Spawn("Hey mouche-taureau!", _wife.transform.position);
+					dialog.OnDespawned += () => SetState(States.WaitingConsumption);
+					break;
+				}
+			case States.WaitingConsumption:
+				_count = MushroomManager.Instance.History.Count;
+				break;
+			case States.WifeBubble2:
+				{
+					var text = PlayerManager.Instance.IsDepressed ?
+						"Cabarnoulesque! Ben tousquain le malin?" :
+						"Honorifique gastongay.";
+					var dialog = DialogManager.Instance.Spawn(text, _wife.transform.position);
+					dialog.OnDespawned += () => SetState(States.WaitingChoice);
+					break;
+				}
+			case States.WaitingChoice:
+				// Spawn menu.
+				break;
+			case States.WifeBubble3:
+				{
+					var dialog = DialogManager.Instance.Spawn("Rachidien McSween", _wife.transform.position);
+					dialog.OnDespawned += () => SetState(States.WifeExiting);
+					break;
+				}
+			case States.WifeExiting:
+				Door.Instance.Exit(_wife.GetComponentInChildren<CanvasGroup>(), () =>
+				{
+					SetState(States.Done);
+					Door.Instance.Close();
+				});
+				break;
+		}
+
+		State = state;
 	}
 }

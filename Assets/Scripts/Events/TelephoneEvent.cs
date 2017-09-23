@@ -3,7 +3,8 @@
 	public enum States
 	{
 		WaitConsumption,
-		WaitTelephone,
+		WaitChoice,
+		TelephoneBubble1,
 		Done
 	}
 
@@ -14,9 +15,7 @@
 
 	void OnEnable()
 	{
-		Telephone.Instance.Ring(Callers.Mom);
-		State = States.WaitConsumption;
-		_count = MushroomManager.Instance.History.Count;
+		SetState(States.WaitConsumption);
 	}
 
 	void Update()
@@ -25,20 +24,35 @@
 		{
 			case States.WaitConsumption:
 				if (MushroomManager.Instance.History.Count > _count)
-				{
-					State = States.WaitTelephone;
-					// Spawn the menu.
-				}
+					SetState(States.WaitChoice);
 				break;
-			case States.WaitTelephone:
+			case States.WaitChoice:
+				// Replace with menu callbacks.
 				if (Telephone.Instance.State == Telephone.States.Answered)
-				{
-					BubbleManager.Instance.Spawn(300,200,"Simon le cavalier grandissime.", 0.1f, 5f, Telephone.Instance.gameObject, true);
-					State = States.Done;
-				}
+					SetState(States.TelephoneBubble1);
 				else if (Telephone.Instance.State == Telephone.States.Cancelled)
-					State = States.Done;
+					SetState(States.Done);
 				break;
 		}
+	}
+
+	void SetState(States state)
+	{
+		switch (state)
+		{
+			case States.WaitConsumption:
+				Telephone.Instance.Ring(Callers.Mom);
+				_count = MushroomManager.Instance.History.Count;
+				break;
+			case States.WaitChoice:
+				// Spawn the menu.
+				break;
+			case States.TelephoneBubble1:
+				var dialog = DialogManager.Instance.Spawn("Simon le cavalier grandissime.", Telephone.Instance.transform.position);
+				dialog.OnDespawned += () => SetState(States.Done);
+				break;
+		}
+
+		State = state;
 	}
 }
