@@ -12,12 +12,12 @@ public class Dialog : MonoBehaviour
 	public double ScaleTime;
 	public double TypewriterSpeed;
 
-	public void Display(string text)
+	public void Display(params string[] lines)
 	{
-		StartCoroutine(AnimationRoutine(text));
+		StartCoroutine(AnimationRoutine(lines));
 	}
 
-	IEnumerator AnimationRoutine(string text)
+	IEnumerator AnimationRoutine(string[] lines)
 	{
 		Text.text = "";
 
@@ -30,13 +30,19 @@ public class Dialog : MonoBehaviour
 		transform.localScale = Vector3.one;
 		OnSpawned();
 
-		for (int i = 0; i < text.Length; i++)
+		foreach (var line in lines)
 		{
-			Text.text += text[i];
-			yield return new WaitForSeconds((float)(TimelineManager.Instance.DeltaTime.TotalSeconds / TypewriterSpeed));
+			Text.text = "";
+
+			for (int i = 0; i < line.Length; i++)
+			{
+				Text.text += line[i];
+				yield return new WaitForSeconds((float)(TimelineManager.Instance.DeltaTime.TotalSeconds / TypewriterSpeed));
+			}
+
+			while (!Input.GetKeyDown(KeyCode.Mouse0)) yield return null;
 		}
 
-		Text.text = text;
 		yield return new WaitForSeconds(3f);
 
 		for (double i = 0; i < ScaleTime; i += TimelineManager.Instance.DeltaTime.TotalSeconds)
