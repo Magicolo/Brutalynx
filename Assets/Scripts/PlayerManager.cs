@@ -1,5 +1,13 @@
 ﻿using UnityEngine;
 
+
+public enum Status
+{
+    Drunkness,
+    Happiness,
+    Boredom
+}
+
 public class PlayerManager : MonoBehaviour
 {
 	public static PlayerManager Instance { get; private set; }
