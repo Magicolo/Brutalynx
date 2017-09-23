@@ -29,6 +29,12 @@ public class Telephone : Singleton<Telephone>
 		StartCoroutine(RingRoutine());
 	}
 
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.U))
+			Answer();
+	}
+
 	public void Answer()
 	{
 		State = States.Answered;

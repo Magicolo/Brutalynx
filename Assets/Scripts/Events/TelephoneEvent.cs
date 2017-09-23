@@ -33,7 +33,7 @@
 			case States.WaitTelephone:
 				if (Telephone.Instance.State == Telephone.States.Answered)
 				{
-					BubbleManager.Instance.Spawn("Simon le cavalier grandissime.", 0.1f, 5f, Telephone.Instance.gameObject, 100f, 100f, true);
+					BubbleManager.Instance.Spawn("Simon le cavalier grandissime.", 0.1f, 5f, Telephone.Instance.gameObject, 50f, 20f, true);
 					_state = States.Done;
 				}
 				else if (Telephone.Instance.State == Telephone.States.Cancelled)

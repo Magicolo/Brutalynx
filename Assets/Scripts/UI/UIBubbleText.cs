@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,66 +9,65 @@ using Utils.UI;
 public class UIBubbleText : UIPanel
 {
 
-    public string textToWrite;
-    public float speed = 0.5f;
-    public float timeBeforeHidding;
-    public UnityEvent OnHidding = new UnityEvent();
-    public UnityEvent OnStarting = new UnityEvent();
+	public string textToWrite;
+	public float speed = 0.5f;
+	public float timeBeforeHidding;
+	public UnityEvent OnHidding = new UnityEvent();
+	public UnityEvent OnStarting = new UnityEvent();
+	public Text Text;
+	public Image ImageBubble;
 
-    private int caracterToWrite;
-    private Text text;
-    private Image imageBubble;
+	private int caracterToWrite;
 
-    public bool left;
+	public bool left;
 
-    public void Init(string textToWrite, float speed, float timeBeforeHidding, bool left)
-    {
-        CancelInvoke();
-        Hide();
-        this.textToWrite = textToWrite;
-        this.speed = speed;
-        this.timeBeforeHidding = timeBeforeHidding;
+	public void Init(string textToWrite, float speed, float timeBeforeHidding, bool left)
+	{
+		CancelInvoke();
+		Hide();
+		this.textToWrite = textToWrite;
+		this.speed = speed;
+		this.timeBeforeHidding = timeBeforeHidding;
 
-        imageBubble.transform.localScale = (new Vector3((left)?1:-1, 1, 1));
+		ImageBubble.transform.localScale = (new Vector3((left) ? 1 : -1, 1, 1));
 
-        caracterToWrite = 0; 
-    }
+		caracterToWrite = 0;
+	}
 
-    public void LaunchBubble()
-    {
-        Show();
-        InvokeRepeating("AddCharacter", 0, speed);
-        OnStarting.Invoke();
-    }
+	public void LaunchBubble()
+	{
+		Show();
+		InvokeRepeating("AddCharacter", 0, speed);
+		OnStarting.Invoke();
+	}
 
-    protected override void Start()
-    {
-        base.Start();
-        text = GetComponent<Text>();
-        imageBubble = GetComponentInChildren<Image>();
-        Init(textToWrite, speed, timeBeforeHidding, left);
-        LaunchBubble();
-    }
+	protected override void Start()
+	{
+		base.Start();
 
-    public void AddCharacter()
-    {
-        if (caracterToWrite < textToWrite.Length)
-            caracterToWrite++;
-        else
-        {
-            CancelInvoke();
-            OnHidding.Invoke();
-        }
-        UpdateText();
-    }
+		Init(textToWrite, speed, timeBeforeHidding, left);
+		LaunchBubble();
+	}
 
-    public void DestroyBubble()
-    {
-        Destroy(this.gameObject);
-    }
+	public void AddCharacter()
+	{
+		if (caracterToWrite < textToWrite.Length)
+			caracterToWrite++;
+		else
+		{
+			CancelInvoke();
+			OnHidding.Invoke();
+		}
+		UpdateText();
+	}
 
-    public void UpdateText()
-    {
-        text.text = textToWrite.Substring(0, caracterToWrite);
-    }
+	public void DestroyBubble()
+	{
+		Destroy(this.gameObject);
+	}
+
+	public void UpdateText()
+	{
+		Text.text = textToWrite.Substring(0, caracterToWrite);
+	}
 }
