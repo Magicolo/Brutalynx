@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using Utils.UI;
 
 [Serializable]
-[RequireComponent(typeof(Text))]
 public class UIBubbleText : UIPanel
 {
 
@@ -16,22 +15,27 @@ public class UIBubbleText : UIPanel
 	public UnityEvent OnStarting = new UnityEvent();
 	public Text Text;
 	public Image ImageBubble;
+    public float width, height;
 
 	private int caracterToWrite;
 
 	public bool left;
 
-	public void Init(string textToWrite, float speed, float timeBeforeHidding, bool left)
+	public void Init(float width, float height, string textToWrite, float speed, float timeBeforeHidding, bool left)
 	{
 		CancelInvoke();
 		Hide();
+        this.left = left;
 		this.textToWrite = textToWrite;
 		this.speed = speed;
 		this.timeBeforeHidding = timeBeforeHidding;
+        this.width = width;
+        this.height = height;
+        
+        ImageBubble.transform.localScale = (new Vector3((left) ? 1 : -1, 1, 1));
+        Text.transform.localScale = (new Vector3((left) ? 1 : -1, 1, 1));
 
-		ImageBubble.transform.localScale = (new Vector3((left) ? 1 : -1, 1, 1));
-
-		caracterToWrite = 0;
+        caracterToWrite = 0;
 	}
 
 	public void LaunchBubble()
@@ -45,11 +49,12 @@ public class UIBubbleText : UIPanel
 	{
 		base.Start();
 
-		Init(textToWrite, speed, timeBeforeHidding, left);
+		Init(width,height,textToWrite, speed, timeBeforeHidding, left);
 		LaunchBubble();
 	}
+    
 
-	public void AddCharacter()
+    public void AddCharacter()
 	{
 		if (caracterToWrite < textToWrite.Length)
 			caracterToWrite++;
