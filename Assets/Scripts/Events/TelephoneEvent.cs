@@ -29,14 +29,7 @@
 			case States.WaitChoice:
 				// Replace with menu callbacks.
 				if (Telephone.Instance.State == Telephone.States.Answered)
-<<<<<<< b707711ccadad04ff77566c2a2a845155fbe47b5
-				{
-					BubbleManager.Instance.Spawn(300,200,"Simon le cavalier grandissime.", 0.1f, 5f, Telephone.Instance.gameObject, true);
-					State = States.Done;
-				}
-=======
 					SetState(States.TelephoneBubble1);
->>>>>>> 03128ceb75682806e0ff7a0e9a501e0caead39cf
 				else if (Telephone.Instance.State == Telephone.States.Cancelled)
 					SetState(States.Done);
 				break;
