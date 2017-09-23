@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Scrollbar))]
 public class UITimeLine : MonoBehaviour
 {
-    public TimeData timeBegin;
+    public UnityEvent OnTimeLineStart = new UnityEvent();
+    public UnityEvent OnTimeLineEnd = new UnityEvent();
+
+    public TimeData timeBegin = new TimeData();
+    public TimeData timeEnd = new TimeData();
+    public TimeData currentTime = new TimeData();
     public int CompleteTime;
+
+    public bool started = false; 
 
     private Scrollbar currentScroll;
 
@@ -16,16 +24,50 @@ public class UITimeLine : MonoBehaviour
 
     public TimeData CurrentTime()
     {
-        return null;
+        return currentTime;
     }
+
+    public void Init(TimeData begin, TimeData end)
+    {
+        this.timeBegin = begin;
+        CompleteTime = (end - begin).ToMinutes();
+        started = false;
+        
+    } 
 
     public float CalculValue()
     {
-        return (CurrentTime() - timeBegin).ToMinutes() / CompleteTime;
+        return (float)(CurrentTime() - timeBegin).ToMinutes() / CompleteTime;
+    }
+
+    public void UpdateTimeLine()
+    {
+        float size = CalculValue();
+        sizeScrool = size;
+        currentScroll.size = size;
+
+        if (!started && size > 0)
+        {
+            started = true;
+            OnTimeLineStart.Invoke();
+        }
+        else if(size >= 1)
+        {
+            finished = true;
+            OnTimeLineEnd.Invoke();
+        }
+
     }
 
     private void Update()
     {
-        currentScroll.size = CalculValue();
+        UpdateTimeLine();  
+    }
+
+    private void OnValidate()
+    {
+        currentScroll = GetComponent<Scrollbar>();
+        Init(timeBegin, timeEnd);
+        UpdateTimeLine();
     }
 }
