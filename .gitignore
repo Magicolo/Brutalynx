@@ -10,8 +10,6 @@ Library/
 .vs/
 .git/
 
-ProjectVersion.txt
-
 *.csproj
 *.csproj.user
 *.suo

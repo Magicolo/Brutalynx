@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Door : Singleton<Door>
 {
@@ -11,8 +10,8 @@ public class Door : Singleton<Door>
 		Closed
 	}
 
-	public Image Opened;
-	public Image Closed;
+	public GameObject Opened;
+	public GameObject Closed;
 	public States State;
 
 	public void Open()
@@ -40,8 +39,8 @@ public class Door : Singleton<Door>
 		if (Input.GetKeyDown(KeyCode.O)) Open();
 		if (Input.GetKeyDown(KeyCode.C)) Close();
 
-		Opened.gameObject.SetActive(State == States.Opened);
-		Closed.gameObject.SetActive(State == States.Closed);
+		Opened.SetActive(State == States.Opened);
+		Closed.SetActive(State == States.Closed);
 	}
 
 	IEnumerator EnterRoutine(CanvasGroup group, Action done)

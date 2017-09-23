@@ -37,7 +37,7 @@ public class WifeEvent : EventBase
 		{
 			case States.WaitingConsumption:
 				if (MushroomManager.Instance.History.Count > _count)
-					SetState(States.WifeExiting);
+					SetState(States.WifeBubble2);
 				break;
 		}
 	}
@@ -67,7 +67,7 @@ public class WifeEvent : EventBase
 						"Cabarnoulesque! Ben tousquain le malin?" :
 						"Honorifique gastongay.";
 					var dialog = DialogManager.Instance.Spawn(text, _wife.transform.position);
-					dialog.OnDespawned += () => SetState(States.WaitingChoice);
+					dialog.OnDespawned += () => SetState(States.WifeBubble3);
 					break;
 				}
 			case States.WaitingChoice:
