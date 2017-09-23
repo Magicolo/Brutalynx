@@ -41,11 +41,6 @@ public class Telephone : Singleton<Telephone>
 		State = States.Cancelled;
 	}
 
-	public void Reset()
-	{
-		State = States.Idle;
-	}
-
 	IEnumerator RingRoutine()
 	{
 		var position = transform.position;
