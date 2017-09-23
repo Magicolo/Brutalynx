@@ -7,26 +7,26 @@
 		Done
 	}
 
-	public override bool IsDone { get { return _state == States.Done; } }
+	public override bool IsDone { get { return State == States.Done; } }
 
-	States _state;
+	public States State;
 	int _count;
 
 	void OnEnable()
 	{
 		Telephone.Instance.Ring(Callers.Mom);
-		_state = States.WaitConsumption;
+		State = States.WaitConsumption;
 		_count = MushroomManager.Instance.History.Count;
 	}
 
 	void Update()
 	{
-		switch (_state)
+		switch (State)
 		{
 			case States.WaitConsumption:
 				if (MushroomManager.Instance.History.Count > _count)
 				{
-					_state = States.WaitTelephone;
+					State = States.WaitTelephone;
 					// Spawn the menu.
 				}
 				break;
@@ -34,10 +34,10 @@
 				if (Telephone.Instance.State == Telephone.States.Answered)
 				{
 					BubbleManager.Instance.Spawn("Simon le cavalier grandissime.", 0.1f, 5f, Telephone.Instance.gameObject, 50f, 20f, true);
-					_state = States.Done;
+					State = States.Done;
 				}
 				else if (Telephone.Instance.State == Telephone.States.Cancelled)
-					_state = States.Done;
+					State = States.Done;
 				break;
 		}
 	}
