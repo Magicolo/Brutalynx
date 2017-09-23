@@ -11,7 +11,6 @@ public class ImageAnimation : MonoBehaviour
     private void OnEnable()
     {
 		StartCoroutine(AnimationRoutine());
-
     }
 
     private void OnDisable()
