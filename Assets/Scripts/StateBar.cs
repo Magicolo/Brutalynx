@@ -35,6 +35,7 @@ public class StateBar : MonoBehaviour {
     public void SetState(float stateValue)
     {
         stateValue = Mathf.Clamp(stateValue, -1, 1);
+        StateValue = stateValue;
 
         ScrollLeft.size = -stateValue;
         ScrollRight.size = stateValue;

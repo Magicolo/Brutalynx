@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b15feeb22a011ba4fb06f792d53e7e0b
+timeCreated: 1506178562
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mom?sTypewriter
+  fontNames:
+  - Mom?sTypewriter
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
