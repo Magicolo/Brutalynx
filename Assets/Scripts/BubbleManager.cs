@@ -6,7 +6,7 @@ public class BubbleManager : Singleton<BubbleManager>
 {
     public GameObject prefabs;
 
-    public void InvokeBubble(string textToWrite, float speed, float timeBeforeHidding, GameObject attachTo, float width, float height, bool leftBubble)
+    public void Spawn(string textToWrite, float speed, float timeBeforeHidding, GameObject attachTo, float width, float height, bool leftBubble)
     {
         GameObject newBubble = Instantiate(prefabs);
         newBubble.GetComponent<RectTransform>().sizeDelta = new Vector2(width, height);
