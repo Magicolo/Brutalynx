@@ -611,6 +611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Opened: {fileID: 1848646952969994}
   Closed: {fileID: 1077964856990956}
+  FadeTime: 1
   State: 1
 --- !u!114 &114223152989840986
 MonoBehaviour:

@@ -12,7 +12,8 @@ public class Door : Singleton<Door>
 
 	public GameObject Opened;
 	public GameObject Closed;
-	public float FadeTime;
+	public float FadeTime = 1f;
+	public float Wait = 0.5f;
 	public States State;
 
 	public void Open()
@@ -45,7 +46,8 @@ public class Door : Singleton<Door>
 	{
 		group.alpha = 0f;
 		Open();
-		yield return null;
+
+		yield return new WaitForSeconds(Wait);
 
 		for (float counter = 0; counter < FadeTime; counter += Time.deltaTime)
 		{
@@ -54,6 +56,7 @@ public class Door : Singleton<Door>
 		}
 
 		group.alpha = 1f;
+		yield return new WaitForSeconds(Wait);
 		Close();
 		yield return null;
 		done();
@@ -63,7 +66,7 @@ public class Door : Singleton<Door>
 	{
 		group.alpha = 1f;
 		Open();
-		yield return null;
+		yield return new WaitForSeconds(Wait);
 
 		for (float counter = 0; counter < FadeTime; counter += Time.deltaTime)
 		{
@@ -72,6 +75,7 @@ public class Door : Singleton<Door>
 		}
 
 		group.alpha = 0f;
+		yield return new WaitForSeconds(Wait);
 		Close();
 		yield return null;
 		done();

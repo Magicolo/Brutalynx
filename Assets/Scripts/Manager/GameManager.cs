@@ -15,7 +15,7 @@ public class GameManager : Singleton<GameManager>
 		foreach (var boss in Bosses)
 		{
 			yield return new WaitForSeconds(1f);
-			var instance = Instantiate(boss, Door.Instance.transform.position, Quaternion.identity);
+			var instance = Instantiate(boss, Door.Instance.transform.position, Quaternion.identity, UIManager.Instance.Canvas.transform);
 
 			while (!instance.IsDone)
 				yield return null;

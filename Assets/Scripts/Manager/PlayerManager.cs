@@ -34,42 +34,42 @@ public class PlayerManager : Singleton<PlayerManager>
 	public bool IsEuphoric { get { return Happiness >= 1f; } }
 	public bool IsOversensitive { get { return Alertness >= 1f; } }
 
-	readonly List<StatusEffect> _effects = new List<StatusEffect>();
+	//readonly List<StatusEffect> _effects = new List<StatusEffect>();
 
-	void Update()
-	{
-		UpdateEffects();
-	}
+	//void Update()
+	//{
+	//	UpdateEffects();
+	//}
 
-	void UpdateEffects()
-	{
-		for (int i = 0; i < _effects.Count; i++)
-		{
-			var effect = _effects[i];
-			var deltaTime = TimelineManager.Instance.DeltaTime;
-			effect.Delay = Utility.Max(effect.Delay - TimelineManager.Instance.DeltaTime, TimeSpan.Zero);
-			var modifier = effect.Delay <= TimeSpan.Zero ?
-				Math.Min(TimelineManager.Instance.DeltaTime.TotalSeconds / effect.Time.TotalSeconds, Math.Abs(effect.Remaining)) : 0f;
-			modifier *= Math.Sign(effect.Remaining);
-			effect.Remaining -= modifier;
+	//void UpdateEffects()
+	//{
+	//	for (int i = 0; i < _effects.Count; i++)
+	//	{
+	//		var effect = _effects[i];
+	//		var deltaTime = TimelineManager.Instance.DeltaTime;
+	//		effect.Delay = Utility.Max(effect.Delay - TimelineManager.Instance.DeltaTime, TimeSpan.Zero);
+	//		var modifier = effect.Delay <= TimeSpan.Zero ?
+	//			Math.Min(TimelineManager.Instance.DeltaTime.TotalSeconds / effect.Time.TotalSeconds, Math.Abs(effect.Remaining)) : 0f;
+	//		modifier *= Math.Sign(effect.Remaining);
+	//		effect.Remaining -= modifier;
 
-			switch (effect.Status)
-			{
-				case Status.Confidence:
-					Confidence += modifier;
-					break;
-				case Status.Happiness:
-					Happiness += modifier;
-					break;
-				case Status.Alertness:
-					Alertness += modifier;
-					break;
-			}
+	//		switch (effect.Status)
+	//		{
+	//			case Status.Confidence:
+	//				Confidence += modifier;
+	//				break;
+	//			case Status.Happiness:
+	//				Happiness += modifier;
+	//				break;
+	//			case Status.Alertness:
+	//				Alertness += modifier;
+	//				break;
+	//		}
 
-			if (Math.Abs(effect.Remaining) <= 0.0) _effects.RemoveAt(i--);
-			else _effects[i] = effect;
-		}
-	}
+	//		if (Math.Abs(effect.Remaining) <= 0.0) _effects.RemoveAt(i--);
+	//		else _effects[i] = effect;
+	//	}
+	//}
 
-	public void AddEffect(StatusEffect effect) { _effects.Add(effect); }
+	//public void AddEffect(StatusEffect effect) { _effects.Add(effect); }
 }

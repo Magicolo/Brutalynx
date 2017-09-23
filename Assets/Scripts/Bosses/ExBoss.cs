@@ -12,11 +12,11 @@ public class ExBoss : BossBase
 		Done
 	}
 
+	public States State;
 	public CanvasGroup Group;
 	public string[] ExFuriousDialog1;
 	public string[] ExDialog1;
 	public string[] DudeDialog1;
-	public States State;
 
 	public override bool IsDone
 	{
