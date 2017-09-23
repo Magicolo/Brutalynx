@@ -43,16 +43,8 @@ BlendTree:
     m_DirectBlendParameter: Status
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 1c38188565a59bd459ea66efde7dfa3f, type: 2}
+    m_Motion: {fileID: 7400000, guid: 45cd716a02a8e0647bd13aaaaa8e3fc4, type: 2}
     m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Status
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: f0bb056641f926a4b8bfd09d488c0063, type: 2}
-    m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -61,17 +53,17 @@ BlendTree:
   m_BlendParameter: Status
   m_BlendParameterY: Blend
   m_MinThreshold: 0
-  m_MaxThreshold: 2
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
---- !u!1102 &1102165155744129662
+--- !u!1102 &1102335431096553906
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Idle
+  m_Name: WifeMonster
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -83,7 +75,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b5e406ffcc450364d99b3e7b3d9da34d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 45cd716a02a8e0647bd13aaaaa8e3fc4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -94,7 +86,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: Status
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -138,11 +130,11 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1102165155744129662}
-    m_Position: {x: 324, y: 120, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 1102928590198765190}
-    m_Position: {x: 302, y: 174, z: 0}
+    m_Position: {x: 300, y: 120, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102335431096553906}
+    m_Position: {x: 335, y: 185, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -152,4 +144,4 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102165155744129662}
+  m_DefaultState: {fileID: 1102928590198765190}
