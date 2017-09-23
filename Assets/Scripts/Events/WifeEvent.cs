@@ -6,6 +6,7 @@ public class WifeEvent : EventBase
 	{
 		WifeEntering,
 		WaitingConsumption,
+		WifeExiting,
 		Done
 	}
 
@@ -22,6 +23,7 @@ public class WifeEvent : EventBase
 		_count = MushroomManager.Instance.History.Count;
 		_wife = Instantiate(WifePrefab, UIManager.Instance.Canvas.transform);
 		_wife.transform.position = Door.Instance.transform.position;
+		Door.Instance.Open();
 		Door.Instance.Enter(_wife.GetComponentInChildren<CanvasGroup>(), () => State = States.WaitingConsumption);
 	}
 
@@ -37,8 +39,12 @@ public class WifeEvent : EventBase
 			case States.WaitingConsumption:
 				if (MushroomManager.Instance.History.Count > _count)
 				{
-					Destroy(_wife);
-					State = States.Done;
+					Door.Instance.Exit(_wife.GetComponentInChildren<CanvasGroup>(), () =>
+					{
+						State = States.Done;
+						Door.Instance.Close();
+					});
+					State = States.WifeExiting;
 				}
 				break;
 		}
