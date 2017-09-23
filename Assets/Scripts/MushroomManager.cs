@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 public class MushroomManager : Singleton<MushroomManager>
 {
@@ -13,22 +14,17 @@ public class MushroomManager : Singleton<MushroomManager>
 				{
 					Status = Status.Happiness,
 					Remaining = 0.5f,
-					Speed = 0.5f,
-					Delay = 6f
 				});
 				PlayerManager.Instance.AddEffect(new StatusEffect
 				{
 					Status = Status.Alertness,
 					Remaining = -0.5f,
-					Speed = 0.5f,
-					Delay = 6f
 				});
 				PlayerManager.Instance.AddEffect(new StatusEffect
 				{
 					Status = Status.Confidence,
 					Remaining = -0.25f,
-					Speed = 0.5f,
-					Delay = 24f
+					Delay = TimeSpan.FromSeconds(120.0)
 				});
 				break;
 			case Mushrooms.Green:
@@ -36,22 +32,17 @@ public class MushroomManager : Singleton<MushroomManager>
 				{
 					Status = Status.Alertness,
 					Remaining = 0.5f,
-					Speed = 0.5f,
-					Delay = 6f
 				});
 				PlayerManager.Instance.AddEffect(new StatusEffect
 				{
 					Status = Status.Confidence,
 					Remaining = -0.5f,
-					Speed = 0.5f,
-					Delay = 6f
 				});
 				PlayerManager.Instance.AddEffect(new StatusEffect
 				{
 					Status = Status.Happiness,
 					Remaining = -0.25f,
-					Speed = 0.5f,
-					Delay = 24f
+					Delay = TimeSpan.FromSeconds(120.0)
 				});
 				break;
 			case Mushrooms.Yellow:
@@ -59,22 +50,17 @@ public class MushroomManager : Singleton<MushroomManager>
 				{
 					Status = Status.Confidence,
 					Remaining = 0.5f,
-					Speed = 0.5f,
-					Delay = 6f
 				});
 				PlayerManager.Instance.AddEffect(new StatusEffect
 				{
 					Status = Status.Happiness,
 					Remaining = -0.5f,
-					Speed = 0.5f,
-					Delay = 6f
 				});
 				PlayerManager.Instance.AddEffect(new StatusEffect
 				{
 					Status = Status.Alertness,
 					Remaining = -0.25f,
-					Speed = 0.5f,
-					Delay = 24f
+					Delay = TimeSpan.FromSeconds(120.0)
 				});
 				break;
 			case Mushrooms.Blue:

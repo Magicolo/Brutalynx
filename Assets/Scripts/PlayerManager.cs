@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -12,19 +13,19 @@ public enum Status
 public struct StatusEffect
 {
 	public Status Status;
-	public float Speed;
-	public float Remaining;
-	public float Delay;
+	public TimeSpan Time;
+	public TimeSpan Delay;
+	public double Remaining;
 }
 
 public class PlayerManager : Singleton<PlayerManager>
 {
 	[Range(-1f, 1f)]
-	public float Confidence;
+	public double Confidence;
 	[Range(-1f, 1f)]
-	public float Happiness;
+	public double Happiness;
 	[Range(-1f, 1f)]
-	public float Alertness;
+	public double Alertness;
 
 	public bool IsParanoiac { get { return Confidence <= -1f; } }
 	public bool IsDepressed { get { return Happiness <= -1f; } }
@@ -46,25 +47,26 @@ public class PlayerManager : Singleton<PlayerManager>
 		{
 			var effect = _effects[i];
 			var deltaTime = TimelineManager.Instance.DeltaTime;
-			effect.Delay = Mathf.Max(effect.Delay - TimelineManager.Instance.DeltaTime, 0f);
-			var modifier = effect.Delay <= 0f ?
-				Mathf.Min(TimelineManager.Instance.DeltaTime * effect.Speed, effect.Remaining) : 0f;
+			effect.Delay = Utility.Max(effect.Delay - TimelineManager.Instance.DeltaTime, TimeSpan.Zero);
+			var modifier = effect.Delay <= TimeSpan.Zero ?
+				Math.Min(TimelineManager.Instance.DeltaTime.TotalSeconds / effect.Time.TotalSeconds, Math.Abs(effect.Remaining)) : 0f;
+			modifier *= Math.Sign(effect.Remaining);
 			effect.Remaining -= modifier;
 
 			switch (effect.Status)
 			{
 				case Status.Confidence:
-					Confidence -= modifier;
+					Confidence += modifier;
 					break;
 				case Status.Happiness:
-					Happiness -= modifier;
+					Happiness += modifier;
 					break;
 				case Status.Alertness:
-					Alertness -= modifier;
+					Alertness += modifier;
 					break;
 			}
 
-			if (effect.Remaining <= 0f) _effects.RemoveAt(i--);
+			if (Math.Abs(effect.Remaining) <= 0.0) _effects.RemoveAt(i--);
 			else _effects[i] = effect;
 		}
 	}
