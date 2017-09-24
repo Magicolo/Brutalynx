@@ -79,15 +79,15 @@ MonoBehaviour:
   Animator: {fileID: 95736680780382088}
   Group: {fileID: 225154136826330150}
   Cycles:
-  - Mushrooms: 02000000030000000500000007000000
+  - Mushrooms: 060000000a0000000d00000001000000
     Boss:
     - Status: -1
       Lines:
       - Daddy, you forgot me, you left me all alone!
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.3
+        Happiness: -0.4
+        Irritability: 0.2
     Dude:
     - Status: 0
       Lines:
@@ -98,22 +98,22 @@ MonoBehaviour:
     - Status: 3
       Lines:
       - David? David is that you?
-  - Mushrooms: 02000000030000000500000007000000
+  - Mushrooms: 03000000090000000200000008000000
     Boss:
     - Status: -1
       Lines:
       - I was cold, I needed you!
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.4
+        Happiness: -0.2
+        Irritability: 0.1
     - Status: 5
       Lines:
       - Why did you leave me behind daddy, why?
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.4
+        Happiness: -0.2
+        Irritability: 0.1
     Dude:
     - Status: 0
       Lines:
@@ -124,22 +124,22 @@ MonoBehaviour:
     - Status: 3
       Lines:
       - "David, I\u2019m sorry David, It all happened so fast\u2026"
-  - Mushrooms: 02000000030000000500000007000000
+  - Mushrooms: 0e0000000f0000000500000003000000
     Boss:
     - Status: -1
       Lines:
       - I was so scared, I was alone daddy, they did things to me.
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.2
+        Happiness: 1
+        Irritability: -0.1
     - Status: 5
       Lines:
       - You abandoned me, you were too busy worrying about you, you, you!
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.2
+        Happiness: 1
+        Irritability: -0.1
     Dude:
     - Status: 0
       Lines:
@@ -153,25 +153,25 @@ MonoBehaviour:
       Lines:
       - "I\u2019m so sorry I left you, it was my fault, I\u2019m such a coward."
       - "I ran, I was afraid, I couldn\u2019t see, I didn\u2019t want to see."
-  - Mushrooms: 02000000030000000500000007000000
+  - Mushrooms: 0d000000070000000400000009000000
     Boss:
     - Status: -1
       Lines:
       - "They want you to join us, they\u2019re coming for you."
       - There will be no more running.
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.5
+        Happiness: -1.3
+        Irritability: 1.2
     - Status: -1
       Lines:
       - "You\u2019re a coward, you abandoned your own son."
       - You abandoned him to die!
       - "We\u2019ve come to claim what you have took from others."
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.5
+        Happiness: -1.3
+        Irritability: 1.2
     Dude:
     - Status: 0
       Lines:
