@@ -31,11 +31,11 @@ public struct StatusEffect
 public class PlayerManager : Singleton<PlayerManager>
 {
 	[Range(-1f, 1f)]
-	public double Confidence;
+	public float Confidence;
 	[Range(-1f, 1f)]
-	public double Happiness;
+	public float Happiness;
 	[Range(-1f, 1f)]
-	public double Alertness;
+	public float Alertness;
 
 	public bool IsParanoiac { get { return Confidence <= -1f; } }
 	public bool IsDepressed { get { return Happiness <= -1f; } }
