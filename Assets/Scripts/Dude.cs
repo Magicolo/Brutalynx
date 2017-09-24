@@ -15,6 +15,7 @@ public class Dude : Singleton<Dude>
 	public GameObject Idle;
 	public ImageAnimation Eating;
 	public ImageAnimation Vomit;
+	public AudioSource VomitSource;
 
 	void Update()
 	{
@@ -38,6 +39,7 @@ public class Dude : Singleton<Dude>
 				Eating.PlayOnce(() => SetState(States.Idle));
 				break;
 			case States.Vomitting:
+				VomitSource.Play();
 				Vomit.gameObject.SetActive(true);
 				Vomit.PlayOnce(() => SetState(States.Dead));
 				break;

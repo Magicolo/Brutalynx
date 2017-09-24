@@ -16,11 +16,12 @@ public class MushroomManager : Singleton<MushroomManager>
 
 	public void Consume(Mushrooms mushroom)
 	{
+		History.Push(mushroom);
+		IsWaiting = false;
+
 		StartCoroutine(WaitForEating(() =>
 		{
 			ApplyEffects(mushroom);
-			History.Push(mushroom);
-			IsWaiting = false;
 			listener(mushroom);
 			listener = m => { };
 			GameManager.Instance.CheckPlayer();
