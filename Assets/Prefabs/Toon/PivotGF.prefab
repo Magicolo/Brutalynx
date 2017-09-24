@@ -106,16 +106,16 @@ MonoBehaviour:
   Animator: {fileID: 95863266526145800}
   Group: {fileID: 225010274303305144}
   Cycles:
-  - Mushrooms: 010000000b0000000b00000002000000
+  - Mushrooms: 050000000a000000060000000f000000
     Boss:
     - Status: -1
       Lines:
       - "Oh..my\u2026GOD."
       - "You wouldn\u2019t believe what happened  to me today."
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.2
+        Happiness: 0.35
+        Irritability: 0.1
     Dude:
     - Status: 0
       Lines:
@@ -126,7 +126,7 @@ MonoBehaviour:
     - Status: 4
       Lines:
       - "Oh, please, do tell, I can\u2019t wait to hear all about it!"
-  - Mushrooms: 09000000090000000300000006000000
+  - Mushrooms: 06000000040000000500000003000000
     Boss:
     - Status: -1
       Lines:
@@ -135,8 +135,8 @@ MonoBehaviour:
         totally like, I'm in LOVE with you."
       Modifiers:
         Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Happiness: 0.4
+        Irritability: -0.4
     Dude:
     - Status: 0
       Lines:
@@ -150,22 +150,22 @@ MonoBehaviour:
     - Status: 2
       Lines:
       - Why the hell are you telling me this?
-  - Mushrooms: 0e0000000f0000000900000007000000
+  - Mushrooms: 0f0000000b0000000500000002000000
     Boss:
     - Status: -1
       Lines:
       - "Isn\u2019t it clear, because I fucking Love you\u2026 idiot."
       - Why are you always such a jerk. God.
       Modifiers:
-        Confidence: 0
-        Happiness: 0
+        Confidence: -0.5
+        Happiness: 0.5
         Irritability: 0
     - Status: 5
       Lines:
       - "Why in the hell would you say that, don\u2019t you love me?"
       Modifiers:
-        Confidence: 0
-        Happiness: 0
+        Confidence: -0.5
+        Happiness: 0.5
         Irritability: 0
     Dude:
     - Status: 0
