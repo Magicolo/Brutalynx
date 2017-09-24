@@ -157,7 +157,7 @@ MonoBehaviour:
   Image: {fileID: 114891716356993666}
   Text: {fileID: 114911653136967796}
   ScaleTime: 0.4
-  TypewriterSpeed: 20
+  TypewriterSpeed: 30
   voices: {fileID: 11400000, guid: affcb8951f970fd4cbd8f1c8b6c0f499, type: 2}
   clips: []
 --- !u!114 &114891716356993666

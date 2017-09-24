@@ -38,21 +38,6 @@ public class PlayerManager : Singleton<PlayerManager>
 	[Range(-1f, 1f)]
 	public float Irritability;
 
-	void Update()
-	{
-		if (Input.GetKey(KeyCode.A))
-		{
-			Happiness = 0.8f;
-			Confidence = 0.8f;
-			GameManager.Instance.CheckPlayer();
-		}
-		else if (Input.GetKey(KeyCode.S))
-		{
-			Happiness = 0f;
-			Confidence = 0f;
-		}
-	}
-
 	public void ResetTraits()
 	{
 		Happiness = 0f;
