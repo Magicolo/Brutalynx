@@ -10,7 +10,11 @@ public class Door : Singleton<Door>
 		Closed
 	}
 
-	public GameObject Opened;
+    public AudioSource audioSource;
+    public AudioClip open;
+    public AudioClip close;
+
+    public GameObject Opened;
 	public GameObject Closed;
 	public float FadeTime = 1f;
 	public float Wait = 0.5f;
@@ -19,12 +23,22 @@ public class Door : Singleton<Door>
 	public void Open()
 	{
 		State = States.Opened;
+        if (open != null)
+        {
+            audioSource.clip = open;
+            audioSource.Play();
+        }
 	}
 
 	public void Close()
 	{
 		State = States.Closed;
-	}
+        if (close != null)
+        {
+            audioSource.clip = close;
+            audioSource.Play();
+        }
+    }
 
 	public void Enter(CanvasGroup group, Action done)
 	{

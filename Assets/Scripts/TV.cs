@@ -8,14 +8,25 @@ public class TV : Singleton<TV>
 	public GameObject Off;
 	public States State;
 
-	void Update()
+    public AudioSource audioSource;
+
+    void Update()
 	{
 		On.SetActive(State == States.On);
 		Off.SetActive(State == States.Off);
+        audioSource.volume = -PlayerManager.Instance.Irritability;
 	}
 
 	public void SetState(States state)
 	{
 		State = state;
+        if (State == States.On)
+        {
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
+        }
 	}
 }

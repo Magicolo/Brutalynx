@@ -3,4 +3,5 @@
 public class UIManager : Singleton<UIManager>
 {
 	public Canvas Canvas;
+    public Transform bossRoot;
 }

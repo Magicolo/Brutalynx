@@ -7,7 +7,6 @@ public class Room : Singleton<Room>
         Organic,
         Alien,
         SmokingBoobs,
-
     }
 
 	public GameObject Normal;

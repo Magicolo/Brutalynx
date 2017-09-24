@@ -25,6 +25,13 @@ public class BossCycle
 	public DudeAction[] Dude;
 }
 
+public enum BossType
+{
+    Wife,
+    Kid,
+    GF
+}
+
 public class Boss : MonoBehaviour
 {
 	public enum Statuses

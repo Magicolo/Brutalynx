@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,10 @@ public class Dialog : MonoBehaviour
 	public float ScaleTime;
 	public float TypewriterSpeed;
 
-	public void Display(params string[] lines)
+    public Voices voices;
+    public List<AudioClip> clips = new List<AudioClip>();
+
+	public void Display( params string[] lines)
 	{
 		StartCoroutine(AnimationRoutine(lines));
 	}
@@ -38,6 +42,8 @@ public class Dialog : MonoBehaviour
 			for (int i = 0; i < line.Length; i++)
 			{
 				Text.text += line[i];
+
+
 
 				for (float delay = 0; delay < 1f / TypewriterSpeed; delay += Time.deltaTime)
 					yield return null;
