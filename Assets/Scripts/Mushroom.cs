@@ -25,6 +25,11 @@ public class Mushroom : MonoBehaviour
 	public int Index;
 	public Button Button;
 
+	void Awake()
+	{
+		transform.localScale = Vector3.zero;
+	}
+
 	void Update()
 	{
 		var isEnabled = MushroomManager.Instance.IsWaiting && Index < MushroomManager.Instance.AvailableMushrooms.Length;

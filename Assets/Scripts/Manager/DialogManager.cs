@@ -13,7 +13,7 @@ public class DialogManager : Singleton<DialogManager>
 
 	public Dialog Spawn(string[] lines, Vector3 position, Characters character)
 	{
-		var dialog = Instantiate(GetPrefab(character), position, Quaternion.identity, UIManager.Instance.Canvas.transform);
+		var dialog = Instantiate(GetPrefab(character), position, Quaternion.identity, UIManager.Instance.Root.transform);
 		dialog.Display(lines);
 
 		return dialog;

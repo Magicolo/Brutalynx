@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -11,7 +12,7 @@ public class GameManager : Singleton<GameManager>
 			Mathf.Abs(PlayerManager.Instance.Irritability) >= 1f ||
 			Mathf.Abs(PlayerManager.Instance.Happiness) >= 1f)
 		{
-
+			Flash.Instance.FadeIn(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
 		}
 	}
 
@@ -25,7 +26,7 @@ public class GameManager : Singleton<GameManager>
 		foreach (var boss in Bosses)
 		{
 			yield return new WaitForSeconds(2f);
-			var instance = Instantiate(boss, Door.Instance.transform.position, Quaternion.identity, UIManager.Instance.Canvas.transform);
+			var instance = Instantiate(boss, Door.Instance.transform.position, Quaternion.identity, UIManager.Instance.Root.transform);
 
 			while (!instance.IsDone)
 				yield return null;

@@ -47,7 +47,7 @@ public class WifeEvent : EventBase
 		switch (state)
 		{
 			case States.WifeEntering:
-				_wife = Instantiate(WifePrefab, UIManager.Instance.Canvas.transform);
+				_wife = Instantiate(WifePrefab, UIManager.Instance.Root.transform);
 				_wife.transform.position = Door.Instance.transform.position;
 				Door.Instance.Enter(_wife.GetComponentInChildren<CanvasGroup>(), () => SetState(States.WifeBubble1));
 				break;
