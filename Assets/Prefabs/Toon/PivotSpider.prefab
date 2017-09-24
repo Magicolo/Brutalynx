@@ -79,7 +79,7 @@ MonoBehaviour:
   Animator: {fileID: 95393190762047882}
   Group: {fileID: 225074842997095090}
   Cycles:
-  - Mushrooms: 0200000005000000070000000a000000
+  - Mushrooms: 0b000000020000000600000005000000
     Boss:
     - Status: -1
       Lines:
@@ -87,9 +87,9 @@ MonoBehaviour:
       - You were supposed to give me that report yesterday.
       - What the fuck am I going to tell Stevens now?
       Modifiers:
-        Confidence: -0.6
-        Happiness: 0
-        Irritability: -0.6
+        Confidence: -0.4
+        Happiness: 0.35
+        Irritability: -0.25
     Dude:
     - Status: 0
       Lines:
@@ -103,22 +103,22 @@ MonoBehaviour:
     - Status: 6
       Lines:
       - "Cool your jets, it\u2019s no big deal."
-  - Mushrooms: 030000000f0000000e0000000d000000
+  - Mushrooms: 0f000000030000000900000008000000
     Boss:
     - Status: -1
       Lines:
       - "Stevens will have our heads on a plater, do you know what you\u2019ve done?"
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.15
+        Happiness: 0.75
+        Irritability: -0.2
     - Status: 5
       Lines:
       - This was a huge opportunity for you and I, you fucked us both.
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.15
+        Happiness: 0.75
+        Irritability: -0.2
     Dude:
     - Status: 0
       Lines:
@@ -133,24 +133,24 @@ MonoBehaviour:
     - Status: 4
       Lines:
       - The only thing I see is an old man about to blow his fuse.
-  - Mushrooms: 0c000000020000000400000006000000
+  - Mushrooms: 0900000002000000040000000e000000
     Boss:
     - Status: -1
       Lines:
       - "You don\u2019t know what you\u2019re talking about."
       - "This was the last straw, you\u2019re done working for me."
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.75
+        Happiness: -0.75
+        Irritability: 0.8
     - Status: 5
       Lines:
       - "I\u2019ve heard enough from you, that\u2019s the last time you\u2019ll fuck
         me over, you\u2019re done, you\u2019re finished!"
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.75
+        Happiness: -0.75
+        Irritability: 0.8
     Dude:
     - Status: 0
       Lines:
@@ -161,24 +161,24 @@ MonoBehaviour:
     - Status: 4
       Lines:
       - "Aren\u2019t you taking this a touch to personal?"
-  - Mushrooms: 0e000000060000000200000001000000
+  - Mushrooms: 0700000005000000060000000b000000
     Boss:
     - Status: -1
       Lines:
       - "You know, I\u2019ve always knew you would never amount to anything good. "
       - What would your father say if he could see you now?
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: 1
+        Happiness: -0.1
+        Irritability: -1
     - Status: 5
       Lines:
       - "Are you kidding me, you\u2019re a real piece of work."
       - "You\u2019re lucky if you can find work again in this town."
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: 1
+        Happiness: -0.1
+        Irritability: -1
     Dude:
     - Status: 0
       Lines:
