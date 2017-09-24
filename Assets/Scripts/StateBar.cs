@@ -50,8 +50,8 @@ public class StateBar : MonoBehaviour
 			case Traits.Happiness:
 				SetState(PlayerManager.Instance.Happiness);
 				break;
-			case Traits.Alertness:
-				SetState(PlayerManager.Instance.Alertness);
+			case Traits.Irritability:
+				SetState(PlayerManager.Instance.Confidence);
 				break;
 		}
 	}

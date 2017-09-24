@@ -59,8 +59,8 @@ public class UIStateBar : MonoBehaviour
             case Traits.Happiness:
                 SetState(PlayerManager.Instance.Happiness);
                 break;
-            case Traits.Alertness:
-                SetState(PlayerManager.Instance.Alertness);
+            case Traits.Irritability:
+                SetState(PlayerManager.Instance.Confidence);
                 break;
         }
         StateValue = Mathf.Lerp(StateValue, StateDestination, Time.deltaTime * Speed);
