@@ -80,16 +80,19 @@ public class Boss : MonoBehaviour
 			foreach (var item in PlayDudeAction(dudeAction)) yield return item;
 		}
 
+		foreach (var item in PlayBossAction(LastBossAction)) yield return item;
+
 		var exitDone = false;
 		Door.Instance.Exit(Group, () => exitDone = true);
 		while (!exitDone) yield return null;
 
+		foreach (var item in PlayDudeAction(LastDudeAction)) yield return item;
 		IsDone = true;
 	}
 
 	IEnumerable PlayBossAction(BossAction action)
 	{
-		if (action == null) yield break;
+		if (action == null || action.Lines.Length == 0) yield break;
 
 		var done = false;
 		Speak(action.Lines, () => done = true);
@@ -98,10 +101,10 @@ public class Boss : MonoBehaviour
 
 	IEnumerable PlayDudeAction(DudeAction action)
 	{
-		if (action == null) yield break;
+		if (action == null || action.Lines.Length == 0) yield break;
 
 		var done = false;
-		Speak(action.Lines, () => done = true);
+		Dude.Instance.Speak(action.Lines, () => done = true);
 		while (!done) yield return null;
 	}
 

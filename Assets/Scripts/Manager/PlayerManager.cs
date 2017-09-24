@@ -8,13 +8,14 @@ public enum Statuses
 	Tristesse,
 	Extase,
 	Terreur,
-	Narcicique,
+	Narcissique,
 	Rage,
 	Fanatisme,
 }
 
 public enum Traits
 {
+	None,
 	Happiness,
 	Confidence,
 	Irritability
@@ -37,13 +38,6 @@ public class PlayerManager : Singleton<PlayerManager>
 	[Range(-1f, 1f)]
 	public float Irritability;
 
-	public bool IsParanoiac { get { return Confidence <= -1f; } }
-	public bool IsDepressed { get { return Happiness <= -1f; } }
-	public bool IsDrowsy { get { return Confidence <= -1f; } }
-	public bool IsNarcisic { get { return Confidence >= 1f; } }
-	public bool IsEuphoric { get { return Happiness >= 1f; } }
-	public bool IsOversensitive { get { return Confidence >= 1f; } }
-
 	public bool IsStatus(Statuses status)
 	{
 		switch (status)
@@ -52,11 +46,40 @@ public class PlayerManager : Singleton<PlayerManager>
 			case Statuses.Rage: return Irritability <= -0.5f;
 			case Statuses.Tristesse: return Happiness <= -0.5f;
 			case Statuses.Extase: return Happiness >= 0.5f;
-			case Statuses.Narcicique: return Confidence <= 0.5f;
+			case Statuses.Narcissique: return Confidence <= 0.5f;
 			case Statuses.Fanatisme: return Irritability >= 0.5f;
 			case Statuses.Default: return true;
 		}
 
 		return false;
 	}
+
+	public Traits GetTrait(Statuses status)
+	{
+		switch (status)
+		{
+			case Statuses.Tristesse:
+			case Statuses.Extase: return Traits.Happiness;
+			case Statuses.Terreur:
+			case Statuses.Narcissique: return Traits.Confidence;
+			case Statuses.Rage:
+			case Statuses.Fanatisme: return Traits.Irritability;
+			default:
+			case Statuses.Default: return Traits.None;
+		}
+	}
+
+	public float GetTraitValue(Traits trait)
+	{
+		switch (trait)
+		{
+			case Traits.Happiness: return Happiness;
+			case Traits.Confidence: return Confidence;
+			case Traits.Irritability: return Irritability;
+			default:
+			case Traits.None: return 0f;
+		}
+	}
+
+	public float GetTraitValue(Statuses status) { return GetTraitValue(GetTrait(status)); }
 }
