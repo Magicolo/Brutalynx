@@ -8,7 +8,7 @@ public class TitleManager : Singleton<TitleManager>
 
 	public void OnDemarrer()
 	{
-		SceneManager.LoadScene("Main");
+		SceneManager.LoadScene("Vince");
 	}
 
 	public void OnCredits()
