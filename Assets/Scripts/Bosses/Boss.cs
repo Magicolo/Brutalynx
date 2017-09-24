@@ -26,8 +26,9 @@ public class BossCycle
 	public DudeAction[] Dude;
 }
 
-public enum BossType
+public enum CharacterType
 {
+    Dude,
     Wife,
     Kid,
     GF
@@ -58,7 +59,8 @@ public class Boss : MonoBehaviour
 	public bool IsDone { get; private set; }
 
 	public Statuses Status;
-	public Animator Animator;
+	public CharacterType Type;
+    public Animator Animator;
 	public CanvasGroup Group;
 	public BossCycle[] Cycles;
 	public BossAction LastBossAction;
@@ -134,7 +136,7 @@ public class Boss : MonoBehaviour
 
 	protected void Speak(string[] lines, Action preDone = null, Action done = null)
 	{
-		var dialog = DialogManager.Instance.Spawn(lines, transform.position, Characters.NPC);
+		var dialog = DialogManager.Instance.Spawn(lines, transform.position, Characters.NPC, Type, Status);
 		dialog.OnDespawn += preDone;
 		dialog.OnDespawned += done;
 	}

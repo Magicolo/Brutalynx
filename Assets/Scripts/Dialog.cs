@@ -10,6 +10,7 @@ public class Dialog : MonoBehaviour
 	public event Action OnDespawn = () => { };
 	public event Action OnDespawned = () => { };
 
+    public AudioSource AudioSource;
 	public Text Text;
 	public float ScaleTime;
 	public float TypewriterSpeed;
@@ -17,10 +18,23 @@ public class Dialog : MonoBehaviour
     public Voices voices;
     public List<AudioClip> clips = new List<AudioClip>();
 
-	public void Display( params string[] lines)
+	public void Display(CharacterType type, Boss.Statuses ?status, params string[] lines)
 	{
 		StartCoroutine(AnimationRoutine(lines));
+        clips = voices.GetClip(type, status);
+        OnDespawned += StopSound;
 	}
+
+    public void PlayNextSound(int caracNumber)
+    {
+        AudioSource.clip = clips[caracNumber % clips.Count];
+        AudioSource.Play();
+    }
+
+    public void StopSound()
+    {
+        AudioSource.Stop();
+    }
 
 	IEnumerator AnimationRoutine(string[] lines)
 	{
@@ -44,7 +58,7 @@ public class Dialog : MonoBehaviour
 			{
 				Text.text += line[i];
 
-
+                PlayNextSound(i);
 
 				for (float delay = 0; delay < 1f / TypewriterSpeed; delay += Time.deltaTime)
 					yield return null;

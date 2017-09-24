@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82aacd56a9a5361408b68b6a5fecdf6a, type: 3}
+  m_Name: VoiceBoss
+  m_EditorClassIdentifier: 
+  voices:
+  - type: 0
+    status: -1
+    voiceSounds:
+    - {fileID: 8300000, guid: 2a0146084f5ad5d43811d373d0a55d27, type: 3}
+    - {fileID: 8300000, guid: 1968ed8264d88104aa3b7f05ab672401, type: 3}
+  - type: 1
+    status: -1
+    voiceSounds:
+    - {fileID: 8300000, guid: f5b8949a4986f864ca6f6f427831674c, type: 3}
+    - {fileID: 8300000, guid: 5b8adcf6bf017de4f9a74cd28d3cf04b, type: 3}
+  - type: 2
+    status: -1
+    voiceSounds:
+    - {fileID: 8300000, guid: 3ac3a72728bbd7640b6218937f68ee67, type: 3}
+    - {fileID: 8300000, guid: 811e66a3759070440ba5b345a981b272, type: 3}
+  - type: 0
+    status: 4
+    voiceSounds:
+    - {fileID: 8300000, guid: d864d9e3505c3b647ab006c60d8c443d, type: 3}
+    - {fileID: 8300000, guid: 62ecb75c71c164d4fb8d5990e2edcf37, type: 3}
+  - type: 2
+    status: 4
+    voiceSounds:
+    - {fileID: 8300000, guid: d864d9e3505c3b647ab006c60d8c443d, type: 3}
+    - {fileID: 8300000, guid: 62ecb75c71c164d4fb8d5990e2edcf37, type: 3}
+  - type: 1
+    status: 4
+    voiceSounds:
+    - {fileID: 8300000, guid: 62993ca8b95a64043a33b0ee2f8772b8, type: 3}
+    - {fileID: 8300000, guid: 94e9cea6222084a44a99f2f366383bf0, type: 3}
+  - type: 1
+    status: 4
+    voiceSounds:
+    - {fileID: 8300000, guid: 62993ca8b95a64043a33b0ee2f8772b8, type: 3}
+    - {fileID: 8300000, guid: 94e9cea6222084a44a99f2f366383bf0, type: 3}

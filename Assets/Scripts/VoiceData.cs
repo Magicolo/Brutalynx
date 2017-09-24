@@ -6,6 +6,7 @@ using System;
 [Serializable]
 public class VoiceData
 {
-    BossType type;
-    List<AudioClip> voiceSounds = new List<AudioClip>();
+    public CharacterType type;
+    public Boss.Statuses status;
+    public List<AudioClip> voiceSounds = new List<AudioClip>();
 }

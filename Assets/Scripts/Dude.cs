@@ -4,7 +4,7 @@ public class Dude : Singleton<Dude>
 {
 	public void Speak(string[] lines, Action done = null)
 	{
-		var dialog = DialogManager.Instance.Spawn(lines, transform.position, Characters.Player);
+		var dialog = DialogManager.Instance.Spawn(lines, transform.position, Characters.Player, CharacterType.Dude);
 		dialog.OnDespawned += done;
 	}
 }
