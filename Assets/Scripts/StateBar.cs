@@ -42,18 +42,7 @@ public class StateBar : MonoBehaviour
 
 	private void Update()
 	{
-		switch (status)
-		{
-			case Traits.Confidence:
-				SetState(PlayerManager.Instance.Confidence);
-				break;
-			case Traits.Happiness:
-				SetState(PlayerManager.Instance.Happiness);
-				break;
-			case Traits.Irritability:
-				SetState(PlayerManager.Instance.Confidence);
-				break;
-		}
+		SetState(PlayerManager.Instance.GetTraitValue(status));
 	}
 
 	private void OnValidate()
