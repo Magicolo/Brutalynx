@@ -33,7 +33,11 @@ public class Boss : MonoBehaviour
 		Idle = 0,
 		Furious = 1,
 		Happy = 2,
-	}
+		FuckYou = 3,
+		Monster = 4,
+		Panick = 5,
+
+    }
 
 	public bool IsDone { get; private set; }
 
