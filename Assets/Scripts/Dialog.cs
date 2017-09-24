@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Dialog : MonoBehaviour
 {
 	public event Action OnSpawned = () => { };
+	public event Action OnDespawn = () => { };
 	public event Action OnDespawned = () => { };
 
 	public Text Text;
@@ -45,6 +46,8 @@ public class Dialog : MonoBehaviour
 
 			while (!Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Space)) yield return null;
 		}
+
+		OnDespawn();
 
 		for (float i = 0; i < ScaleTime; i += Time.deltaTime)
 		{

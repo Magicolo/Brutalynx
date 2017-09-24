@@ -11,66 +11,71 @@ public class MushroomManager : Singleton<MushroomManager>
 	public void Consume(Mushrooms mushroom)
 	{
 		// Add constant shroom effects.
-
-		//switch (mushroom)
-		//{
-		//	case Mushrooms.Red:
-		//		PlayerManager.Instance.AddEffect(new StatusEffect
-		//		{
-		//			Status = Status.Happiness,
-		//			Remaining = 0.5f,
-		//		});
-		//		PlayerManager.Instance.AddEffect(new StatusEffect
-		//		{
-		//			Status = Status.Alertness,
-		//			Remaining = -0.5f,
-		//		});
-		//		PlayerManager.Instance.AddEffect(new StatusEffect
-		//		{
-		//			Status = Status.Confidence,
-		//			Remaining = -0.25f,
-		//			Delay = TimeSpan.FromSeconds(120.0)
-		//		});
-		//		break;
-		//	case Mushrooms.Green:
-		//		PlayerManager.Instance.AddEffect(new StatusEffect
-		//		{
-		//			Status = Status.Alertness,
-		//			Remaining = 0.5f,
-		//		});
-		//		PlayerManager.Instance.AddEffect(new StatusEffect
-		//		{
-		//			Status = Status.Confidence,
-		//			Remaining = -0.5f,
-		//		});
-		//		PlayerManager.Instance.AddEffect(new StatusEffect
-		//		{
-		//			Status = Status.Happiness,
-		//			Remaining = -0.25f,
-		//			Delay = TimeSpan.FromSeconds(120.0)
-		//		});
-		//		break;
-		//	case Mushrooms.Yellow:
-		//		PlayerManager.Instance.AddEffect(new StatusEffect
-		//		{
-		//			Status = Status.Confidence,
-		//			Remaining = 0.5f,
-		//		});
-		//		PlayerManager.Instance.AddEffect(new StatusEffect
-		//		{
-		//			Status = Status.Happiness,
-		//			Remaining = -0.5f,
-		//		});
-		//		PlayerManager.Instance.AddEffect(new StatusEffect
-		//		{
-		//			Status = Status.Alertness,
-		//			Remaining = -0.25f,
-		//			Delay = TimeSpan.FromSeconds(120.0)
-		//		});
-		//		break;
-		//	case Mushrooms.Blue:
-		//		break;
-		//}
+		switch (mushroom)
+		{
+			case Mushrooms.PsilocybinCubensis_1:
+				PlayerManager.Instance.Happiness += 0.5f;
+				PlayerManager.Instance.Confidence -= 0.5f;
+				break;
+			case Mushrooms.PluteusSalicinus_2:
+				PlayerManager.Instance.Confidence += 0.5f;
+				PlayerManager.Instance.Irritability -= 0.5f;
+				break;
+			case Mushrooms.GymnopilusLuteoviridis_3:
+				PlayerManager.Instance.Irritability += 0.5f;
+				PlayerManager.Instance.Happiness -= 0.5f;
+				break;
+			case Mushrooms.PanaeolusCinctulus_4:
+				PlayerManager.Instance.Happiness += 0.5f;
+				PlayerManager.Instance.Irritability -= 0.5f;
+				break;
+			case Mushrooms.InocybeCoelestium_5:
+				PlayerManager.Instance.Confidence += 0.5f;
+				PlayerManager.Instance.Happiness -= 0.5f;
+				break;
+			case Mushrooms.ConocybeKuehneriana_6:
+				PlayerManager.Instance.Irritability += 0.5f;
+				PlayerManager.Instance.Confidence -= 0.5f;
+				break;
+			case Mushrooms.PsilocybinSemilanceata_7:
+				PlayerManager.Instance.Happiness += 0.5f;
+				PlayerManager.Instance.Irritability -= 0.5f;
+				break;
+			case Mushrooms.PanaeolusSubbalteatus_8:
+				PlayerManager.Instance.Confidence += 0.5f;
+				PlayerManager.Instance.Happiness -= 0.5f;
+				break;
+			case Mushrooms.InocybeHaemacta_9:
+				PlayerManager.Instance.Irritability += 0.5f;
+				PlayerManager.Instance.Confidence -= 0.5f;
+				break;
+			case Mushrooms.ConocybeCyanopus_10:
+				PlayerManager.Instance.Happiness += 0.5f;
+				PlayerManager.Instance.Irritability -= 0.5f;
+				break;
+			case Mushrooms.GymnopilusValidipes_11:
+				PlayerManager.Instance.Confidence += 0.5f;
+				PlayerManager.Instance.Happiness -= 0.5f;
+				break;
+			case Mushrooms.PluteusBrunneidiscus_12:
+				PlayerManager.Instance.Irritability += 0.5f;
+				PlayerManager.Instance.Confidence -= 0.5f;
+				break;
+			case Mushrooms.CopelandiaBispora_13:
+				PlayerManager.Instance.Happiness += 0.5f;
+				PlayerManager.Instance.Confidence -= 0.5f;
+				break;
+			case Mushrooms.GymnopilusAeruginosus_14:
+				PlayerManager.Instance.Confidence += 0.5f;
+				PlayerManager.Instance.Irritability -= 0.5f;
+				break;
+			case Mushrooms.InfinitusFractaliosis_15:
+				PlayerManager.Instance.Irritability += 0.5f;
+				PlayerManager.Instance.Happiness -= 0.5f;
+				break;
+			default:
+				break;
+		}
 
 		History.Push(mushroom);
 		IsWaiting = false;
