@@ -32,7 +32,7 @@ public enum CharacterType
     Wife,
     Kid,
     GF,
-    Spider,
+    Boss,
 }
 
 [Serializable]

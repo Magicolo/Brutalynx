@@ -47,3 +47,13 @@ MonoBehaviour:
     voiceSounds:
     - {fileID: 8300000, guid: 62993ca8b95a64043a33b0ee2f8772b8, type: 3}
     - {fileID: 8300000, guid: 94e9cea6222084a44a99f2f366383bf0, type: 3}
+  - type: 4
+    status: -1
+    voiceSounds:
+    - {fileID: 8300000, guid: 40712e56227211d4ab362897710bd76a, type: 3}
+    - {fileID: 8300000, guid: 50f73f0441a8208499f3919e2af75285, type: 3}
+  - type: 4
+    status: 4
+    voiceSounds:
+    - {fileID: 8300000, guid: 087b097f51150ef4793d6d1b1035f340, type: 3}
+    - {fileID: 8300000, guid: aef46c74b6dcc2345b4047d32a75b461, type: 3}

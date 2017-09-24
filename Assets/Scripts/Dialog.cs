@@ -27,8 +27,11 @@ public class Dialog : MonoBehaviour
 
     public void PlayNextSound(int caracNumber)
     {
-        AudioSource.clip = clips[caracNumber % clips.Count];
-        AudioSource.Play();
+        if(clips.Count > 0)
+        {
+            AudioSource.clip = clips[caracNumber % clips.Count];
+            AudioSource.Play();
+        }
     }
 
     public void StopSound()

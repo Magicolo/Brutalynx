@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224579012114380724}
   - component: {fileID: 114046868942031226}
   m_Layer: 5
-  m_Name: PivotSpider
+  m_Name: PivotBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 222990421820054172}
   - component: {fileID: 225074842997095090}
   m_Layer: 5
-  m_Name: Spider
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
