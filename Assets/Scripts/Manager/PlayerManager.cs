@@ -45,22 +45,26 @@ public class PlayerManager : Singleton<PlayerManager>
 		Irritability = 0f;
 	}
 
-	public bool ChuTuCrazy(float threshold = 0.6f)
+	public bool ChuTuCrazy(/*float threshold = 0.6f*/)
 	{
-		var count =
-			(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
-			(Mathf.Abs(Confidence) >= threshold ? 1 : 0) +
-			(Mathf.Abs(Irritability) >= threshold ? 1 : 0);
-		return count >= 2;
+		return Mathf.Abs(Happiness) + Mathf.Abs(Confidence) + Mathf.Abs(Irritability) > 1f;
+
+		//var count =
+		//	(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
+		//	(Mathf.Abs(Confidence) >= threshold ? 1 : 0) +
+		//	(Mathf.Abs(Irritability) >= threshold ? 1 : 0);
+		//return count >= 2;
 	}
 
-	public bool ChuTuFuckinBatShitCrazy(float threshold = 0.8f)
+	public bool ChuTuFuckinBatShitCrazy(/*float threshold = 0.8f*/)
 	{
-		var count =
-			(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
-			(Mathf.Abs(Confidence) >= threshold ? 1 : 0) +
-			(Mathf.Abs(Irritability) >= threshold ? 1 : 0);
-		return count >= 2;
+		return Mathf.Abs(Happiness) + Mathf.Abs(Confidence) + Mathf.Abs(Irritability) > 1.5f;
+
+		//var count =
+		//	(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
+		//	(Mathf.Abs(Confidence) >= threshold ? 1 : 0) +
+		//	(Mathf.Abs(Irritability) >= threshold ? 1 : 0);
+		//return count >= 2;
 	}
 
 	public bool IsStatus(Statuses status)

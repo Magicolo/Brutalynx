@@ -74,23 +74,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a667bd715f15146beb5078eccba754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Status: 1
+  Status: 0
   Type: 2
   Animator: {fileID: 95736680780382088}
   Group: {fileID: 225154136826330150}
   Cycles:
-  - Mushrooms: 090000000a0000000f00000007000000
+  - Mushrooms: 02000000030000000500000007000000
     Boss:
-    - Status: 0
+    - Status: -1
       Lines:
-      - qzdzdqzdzqdzqdqzdzddqzdzqdzqdzqdzqdqzdz
-      Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
-    - Status: 4
-      Lines:
-      - zdqdzdzqqzzzzzzzzzzzzzzzzzzzzzzz
+      - Daddy, you forgot me, you left me all alone!
       Modifiers:
         Confidence: 0
         Happiness: 0
@@ -98,20 +91,123 @@ MonoBehaviour:
     Dude:
     - Status: 0
       Lines:
-      - zzdqzqdqzdzqdzdqzddzzzdqzqdqzdzqdzdqzddz
+      - "That can\u2019t be\u2026 David\u2026"
+    - Status: 2
+      Lines:
+      - David? David is that you?
+    - Status: 3
+      Lines:
+      - David? David is that you?
+  - Mushrooms: 02000000030000000500000007000000
+    Boss:
+    - Status: -1
+      Lines:
+      - I was cold, I needed you!
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    - Status: 5
+      Lines:
+      - Why did you leave me behind daddy, why?
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
     - Status: 0
       Lines:
-      - zzdqzqdqzdzqdzdqzddzzzdqzqdqzdzqdzdqzddzzzdqzqdqzdzqdzdqzddz
+      - "This can\u2019t be happening, you\u2019re gone David, gone."
+    - Status: 2
+      Lines:
+      - "David, I\u2019m sorry David, It all happened so fast\u2026"
+    - Status: 3
+      Lines:
+      - "David, I\u2019m sorry David, It all happened so fast\u2026"
+  - Mushrooms: 02000000030000000500000007000000
+    Boss:
+    - Status: -1
+      Lines:
+      - I was so scared, I was alone daddy, they did things to me.
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    - Status: 5
+      Lines:
+      - You abandoned me, you were too busy worrying about you, you, you!
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - "I saw them take you, I didn\u2019t know what to do, I thought I would never
+        see you again."
+    - Status: 3
+      Lines:
+      - "I\u2019m so sorry I left you, it was my fault, I\u2019m such a coward."
+      - "I ran, I was afraid, I couldn\u2019t see, I didn\u2019t want to see."
+    - Status: 6
+      Lines:
+      - "I\u2019m so sorry I left you, it was my fault, I\u2019m such a coward."
+      - "I ran, I was afraid, I couldn\u2019t see, I didn\u2019t want to see."
+  - Mushrooms: 02000000030000000500000007000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "They want you to join us, they\u2019re coming for you."
+      - There will be no more running.
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    - Status: -1
+      Lines:
+      - "You\u2019re a coward, you abandoned your own son."
+      - You abandoned him to die!
+      - "We\u2019ve come to claim what you have took from others."
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - "I\u2019m not running anymore, I\u2019ve done so many things I regret."
+      - 'Letting you go was the worst of all. '
+      - Please take me with you.
+    - Status: 3
+      Lines:
+      - I can feel them, the ones who took you, I can feel them, inside.
+      - "It\u2019s aching, talking, screaming."
+      - "Soon there will be nothing left, only what I\u2019ve done and what I\u2019ve
+        become."
+    - Status: 2
+      Lines:
+      - I can feel them, the ones who took you, I can feel them, inside.
+      - "It\u2019s aching, talking, screaming."
+      - "Soon there will be nothing left, only what I\u2019ve done and what I\u2019ve
+        become."
+    - Status: 5
+      Lines:
+      - I can feel them, the ones who took you, I can feel them, inside.
+      - "It\u2019s aching, talking, screaming."
+      - "Soon there will be nothing left, only what I\u2019ve done and what I\u2019ve
+        become."
   LastBossAction:
-    Status: 0
-    Lines: []
+    Status: -1
+    Lines:
+    - 92317, eyes that see will never truly feel.
     Modifiers:
       Confidence: 0
       Happiness: 0
       Irritability: 0
   LastDudeAction:
     Status: 0
-    Lines: []
+    Lines:
+    - "Fuck\u2026 I should start locking locking my door."
 --- !u!114 &114966474571774152
 MonoBehaviour:
   m_ObjectHideFlags: 1
