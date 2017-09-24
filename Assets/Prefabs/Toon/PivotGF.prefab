@@ -104,7 +104,20 @@ MonoBehaviour:
   Status: 0
   Animator: {fileID: 95863266526145800}
   Group: {fileID: 225010274303305144}
-  Cycles: []
+  Cycles:
+  - Mushrooms: 03000000060000000c0000000d000000
+    Boss:
+    - Status: -1
+      Lines:
+      - wetgdfg
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - sdfiiosduf
   LastBossAction:
     Status: 0
     Lines: []

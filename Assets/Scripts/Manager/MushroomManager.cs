@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class MushroomManager : Singleton<MushroomManager>
 {
 	public bool IsWaiting;
 	public readonly Stack<Mushrooms> History = new Stack<Mushrooms>();
+	public Sprite[] MushroomSprites;
+	public Mushrooms[] AvailableMushrooms = new Mushrooms[0];
 
 	Action<Mushrooms> listener = m => { };
+
+	public void Consume(int index) { Consume(AvailableMushrooms[index]); }
 
 	public void Consume(Mushrooms mushroom)
 	{

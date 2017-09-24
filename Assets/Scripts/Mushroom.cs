@@ -22,19 +22,25 @@ public enum Mushrooms
 
 public class Mushroom : MonoBehaviour
 {
-	public Mushrooms Type;
+	public int Index;
 	public Button Button;
 
 	void Update()
 	{
-		var isWaiting = MushroomManager.Instance.IsWaiting;
-		var scale = MushroomManager.Instance.IsWaiting ? Vector3.one : Vector3.zero;
+		var isEnabled = MushroomManager.Instance.IsWaiting && Index < MushroomManager.Instance.AvailableMushrooms.Length;
+		var scale = isEnabled ? Vector3.one : Vector3.zero;
 		transform.localScale = Vector3.Lerp(transform.localScale, scale, Time.deltaTime * 5f);
-		Button.enabled = isWaiting;
+		Button.enabled = isEnabled;
+
+		if (isEnabled)
+		{
+			var mushroom = MushroomManager.Instance.AvailableMushrooms[Index];
+			Button.image.sprite = MushroomManager.Instance.MushroomSprites[(int)mushroom];
+		}
 	}
 
 	public void OnClick()
 	{
-		MushroomManager.Instance.Consume(Type);
+		MushroomManager.Instance.Consume(Index);
 	}
 }

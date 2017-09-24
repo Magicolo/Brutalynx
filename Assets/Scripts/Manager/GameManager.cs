@@ -5,6 +5,16 @@ public class GameManager : Singleton<GameManager>
 {
 	public Boss[] Bosses;
 
+	public void CheckPlayer()
+	{
+		if (Mathf.Abs(PlayerManager.Instance.Confidence) >= 1f ||
+			Mathf.Abs(PlayerManager.Instance.Irritability) >= 1f ||
+			Mathf.Abs(PlayerManager.Instance.Happiness) >= 1f)
+		{
+
+		}
+	}
+
 	void OnEnable()
 	{
 		StartCoroutine(GameRoutine());
