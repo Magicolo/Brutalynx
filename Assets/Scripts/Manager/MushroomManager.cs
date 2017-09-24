@@ -39,7 +39,7 @@ public class MushroomManager : Singleton<MushroomManager>
 				PlayerManager.Instance.Irritability -= 0.5f;
 				break;
 			case Mushrooms.InocybeCoelestium_5:
-				if (PlayerManager.Instance.IsStatus(Statuses.Narcissique)) PlayerManager.Instance.Irritability += 0.5f;
+				if (PlayerManager.Instance.IsStatus(Statuses.Naif)) PlayerManager.Instance.Irritability += 0.5f;
 				PlayerManager.Instance.Confidence += 0.5f;
 				PlayerManager.Instance.Happiness -= 0.5f;
 				break;
@@ -49,7 +49,7 @@ public class MushroomManager : Singleton<MushroomManager>
 				PlayerManager.Instance.Confidence -= 0.5f;
 				break;
 			case Mushrooms.PsilocybinSemilanceata_7:
-				if (PlayerManager.Instance.IsStatus(Statuses.Narcissique)) PlayerManager.Instance.Confidence -= 0.5f;
+				if (PlayerManager.Instance.IsStatus(Statuses.Naif)) PlayerManager.Instance.Confidence -= 0.5f;
 				PlayerManager.Instance.Happiness += 0.5f;
 				PlayerManager.Instance.Irritability -= 0.5f;
 				break;
@@ -79,7 +79,7 @@ public class MushroomManager : Singleton<MushroomManager>
 				PlayerManager.Instance.Confidence -= 0.5f;
 				break;
 			case Mushrooms.CopelandiaBispora_13:
-				if (PlayerManager.Instance.IsStatus(Statuses.Narcissique)) PlayerManager.Instance.Confidence -= 0.25f;
+				if (PlayerManager.Instance.IsStatus(Statuses.Naif)) PlayerManager.Instance.Confidence -= 0.25f;
 				PlayerManager.Instance.Happiness += 0.5f;
 				PlayerManager.Instance.Confidence -= 0.5f;
 				break;

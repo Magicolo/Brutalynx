@@ -28,11 +28,11 @@ public class BossCycle
 
 public enum CharacterType
 {
-    Dude,
-    Wife,
-    Kid,
-    GF,
-    Boss,
+	Dude,
+	Wife,
+	Kid,
+	GF,
+	Boss,
 }
 
 [Serializable]
@@ -54,14 +54,13 @@ public class Boss : MonoBehaviour
 		FuckYou = 3,
 		Monster = 4,
 		Panick = 5,
-
 	}
 
 	public bool IsDone { get; private set; }
 
 	public Statuses Status;
 	public CharacterType Type;
-    public Animator Animator;
+	public Animator Animator;
 	public CanvasGroup Group;
 	public BossCycle[] Cycles;
 	public BossAction LastBossAction;
@@ -72,12 +71,17 @@ public class Boss : MonoBehaviour
 		StartCoroutine(BossRoutine());
 	}
 
+	void Update()
+	{
+		SetStatus(PlayerManager.Instance.ChuTuCrazy() ? Statuses.Furious : Statuses.Idle);
+		Room.Instance.SetState(PlayerManager.Instance.ChuTuFuckinBatShitCrazy() ? Room.Instance.FromCharacter(Type) : Room.States.Normal);
+	}
+
 	IEnumerator BossRoutine()
 	{
 		var enterDone = false;
 		Door.Instance.Enter(Group, () => enterDone = true);
 		while (!enterDone) yield return null;
-		GameManager.Instance.CheckPlayer();
 
 		foreach (var cycle in Cycles)
 		{
@@ -87,7 +91,6 @@ public class Boss : MonoBehaviour
 				cycle.Boss.FirstOrDefault();
 
 			foreach (var item in PlayBossAction(bossAction)) yield return item;
-			GameManager.Instance.CheckPlayer();
 
 			MushroomManager.Instance.AvailableMushrooms = cycle.Mushrooms ?? new Mushrooms[0];
 			var consumeDone = false;
@@ -100,18 +103,15 @@ public class Boss : MonoBehaviour
 				cycle.Dude.FirstOrDefault();
 
 			foreach (var item in PlayDudeAction(dudeAction)) yield return item;
-			GameManager.Instance.CheckPlayer();
 		}
 
 		foreach (var item in PlayBossAction(LastBossAction)) yield return item;
-		GameManager.Instance.CheckPlayer();
 
 		var exitDone = false;
 		Door.Instance.Exit(Group, () => exitDone = true);
 		while (!exitDone) yield return null;
 
 		foreach (var item in PlayDudeAction(LastDudeAction)) yield return item;
-		GameManager.Instance.CheckPlayer();
 		IsDone = true;
 	}
 
@@ -153,6 +153,9 @@ public class Boss : MonoBehaviour
 
 	protected void SetStatus(Statuses status)
 	{
+		if (Status != status)
+			Flash.Instance.FadeOut(0.2f);
+
 		Animator.SetFloat("Status", (float)status);
 		Status = status;
 	}

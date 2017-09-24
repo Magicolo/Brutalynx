@@ -19,13 +19,15 @@ public class Flash : Singleton<Flash>
 		StartCoroutine(FadeInRoutine(done ?? (() => { })));
 	}
 
-	public void FadeOut(Action done = null)
+	public void FadeOut(float duration = 2f, Action done = null)
 	{
-		StartCoroutine(FadeOutRoutine(done ?? (() => { })));
+		StartCoroutine(FadeOutRoutine(duration, done ?? (() => { })));
 	}
 
 	IEnumerator FadeInRoutine(Action done)
 	{
+		yield return new WaitForSeconds(1f);
+
 		var duration = 4f;
 		var color = Image.color;
 		var position = UIManager.Instance.Root.position;
@@ -47,9 +49,8 @@ public class Flash : Singleton<Flash>
 		done();
 	}
 
-	IEnumerator FadeOutRoutine(Action done)
+	IEnumerator FadeOutRoutine(float duration, Action done)
 	{
-		var duration = 2f;
 		var color = Image.color;
 		color.a = 1f;
 		Image.color = color;

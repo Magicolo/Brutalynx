@@ -8,7 +8,7 @@ public enum Statuses
 	Tristesse,
 	Extase,
 	Terreur,
-	Narcissique,
+	Naif,
 	Rage,
 	Fanatisme,
 }
@@ -38,6 +38,28 @@ public class PlayerManager : Singleton<PlayerManager>
 	[Range(-1f, 1f)]
 	public float Irritability;
 
+	public bool ChuTuCrazy(float threshold = 0.5f)
+	{
+		if (Input.GetKey(KeyCode.A)) return true;
+
+		var count =
+			Mathf.Abs(Happiness) >= threshold ? 1 : 0 +
+			Mathf.Abs(Confidence) >= threshold ? 1 : 0 +
+			Mathf.Abs(Irritability) >= threshold ? 1 : 0;
+		return count > 2;
+	}
+
+	public bool ChuTuFuckinBatShitCrazy(float threshold = 0.75f)
+	{
+		if (Input.GetKey(KeyCode.S)) return true;
+
+		var count =
+			Mathf.Abs(Happiness) >= threshold ? 1 : 0 +
+			Mathf.Abs(Confidence) >= threshold ? 1 : 0 +
+			Mathf.Abs(Irritability) >= threshold ? 1 : 0;
+		return count > 2;
+	}
+
 	public bool IsStatus(Statuses status)
 	{
 		switch (status)
@@ -46,7 +68,7 @@ public class PlayerManager : Singleton<PlayerManager>
 			case Statuses.Rage: return Irritability <= -0.5f;
 			case Statuses.Tristesse: return Happiness <= -0.5f;
 			case Statuses.Extase: return Happiness >= 0.5f;
-			case Statuses.Narcissique: return Confidence <= 0.5f;
+			case Statuses.Naif: return Confidence <= 0.5f;
 			case Statuses.Fanatisme: return Irritability >= 0.5f;
 			case Statuses.Default: return true;
 		}
@@ -61,7 +83,7 @@ public class PlayerManager : Singleton<PlayerManager>
 			case Statuses.Tristesse:
 			case Statuses.Extase: return Traits.Happiness;
 			case Statuses.Terreur:
-			case Statuses.Narcissique: return Traits.Confidence;
+			case Statuses.Naif: return Traits.Confidence;
 			case Statuses.Rage:
 			case Statuses.Fanatisme: return Traits.Irritability;
 			default:

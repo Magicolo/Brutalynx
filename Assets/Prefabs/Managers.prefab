@@ -171,8 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bosses:
-  - {fileID: 114586615413798614, guid: a314b3c1242e533469c759305065e062, type: 2}
-  - {fileID: 114844227125983062, guid: 73d3f7a5a3ffecd4bb81784a7cd7cd6c, type: 2}
+  - {fileID: 114046868942031226, guid: 5984c719db50b04468cac2fa673c9632, type: 2}
 --- !u!114 &114577003369200010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +192,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 34de3869f96b76b47b1f89d336a652e7, type: 3}
   - {fileID: 21300000, guid: deee1d910be9c3a47b5398811a393da6, type: 3}
   - {fileID: 21300000, guid: 3363c29a139adae4cb706b1a2131a431, type: 3}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 21300000, guid: b720dbbfdc2c4c64cabb56a878f3e919, type: 3}
   - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}

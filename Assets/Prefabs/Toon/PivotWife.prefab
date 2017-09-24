@@ -78,17 +78,32 @@ MonoBehaviour:
   Type: 1
   Animator: {fileID: 95054210510906238}
   Group: {fileID: 225196877917427986}
-  Cycles: []
+  Cycles:
+  - Mushrooms: 04000000030000000500000006000000
+    Boss:
+    - Status: -1
+      Lines:
+      - aspfoivc
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - vccvnrru
   LastBossAction:
-    Status: 0
-    Lines: []
+    Status: -1
+    Lines:
+    - oiuoi
     Modifiers:
       Confidence: 0
       Happiness: 0
       Irritability: 0
   LastDudeAction:
     Status: 0
-    Lines: []
+    Lines:
+    - asdpoi
 --- !u!114 &114069332285912578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,7 +152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -8.6}
+  m_AnchoredPosition: {x: 4, y: -6}
   m_SizeDelta: {x: 32, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224579012114380724
@@ -156,7 +171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30.500002, y: 16}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &225196877917427986
