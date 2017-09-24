@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1356956225023994}
+  m_IsPrefabParent: 1
+--- !u!1 &1356956225023994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224885510169160494}
+  - component: {fileID: 114063074520513806}
+  m_Layer: 5
+  m_Name: PivotWife 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1504382316914944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224298667050426610}
+  - component: {fileID: 222584597195168344}
+  - component: {fileID: 114730836261457390}
+  - component: {fileID: 225024677941174346}
+  - component: {fileID: 95058636901253452}
+  m_Layer: 5
+  m_Name: Wife
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &95058636901253452
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504382316914944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1379aebf1ce06c4489237432fd7b4629, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114063074520513806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356956225023994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a667bd715f15146beb5078eccba754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Status: 0
+  Animator: {fileID: 95058636901253452}
+  Group: {fileID: 225024677941174346}
+  Cycles:
+  - Mushrooms: 00000000000000000000000000000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "Hey, face de cul. Tu m\u2019as jamais redonn\xE9 mon coat de cuir. Man, c\u2019est
+        genre mon pr\xE9f\xE9r\xE9, l\xE0. "
+      - "Y\u2019est ou criss, j\u2019suis s\xFBre je l\u2019avais laiss\xE9 icitte.
+        Chuis tann\xE9e l\xE0, tu r\xE9ponds jamais quand j\u2019t\u2019appelle."
+    - Status: -1
+      Lines:
+      - "Ouain, ouain, c\u2019est \xE7a. Tu t\u2019en criss de mes affaires, j\u2019sais
+        ben. C\u2019\xE9tait mon pr\xE9f\xE9r\xE9, mais t\u2019as probablement jamais
+        remarqu\xE9. Tout ce que tu veux c\u2019est regarder ton ostie de TV."
+    - Status: -1
+      Lines:
+      - "J\u2019devrais te crisser l\xE0, ENCORE. Gros cave."
+    Dude:
+    - Status: 3
+      Lines:
+      - "J\u2019va te le trouver ton coat, j\u2019te le promet! F\xE2che toi pas..."
+    - Status: 5
+      Lines:
+      - "On s\u2019en criss de ton coat laitte. Trouve toi-en un autre, osti d\u2019folle."
+    - Status: 1
+      Lines:
+      - "C\u2019est vraiment poche \u2026 Pourtant j\u2019suis s\xFBr qu\u2019il est
+        pas ici..."
+    - Status: 2
+      Lines:
+      - "C\u2019est vrai qui \xE9tait fucking hot ton coat! Mais je l\u2019ai pas!"
+    - Status: 4
+      Lines:
+      - "Me suis torch\xE9 avec."
+    - Status: 6
+      Lines:
+      - "Fuck, t\u2019\xE9tais tellement hot dans ce coat l\xE0\u2026"
+    - Status: 0
+      Lines:
+      - Ton quoi?
+  LastBossAction:
+    Status: 0
+    Lines: []
+  LastDudeAction:
+    Status: 0
+    Lines: []
+--- !u!114 &114730836261457390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504382316914944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 3b8adb5fb6c3b924fbcbfff37ae3d269, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &222584597195168344
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504382316914944}
+--- !u!224 &224298667050426610
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504382316914944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224885510169160494}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3, y: -3}
+  m_SizeDelta: {x: 32, y: 47}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224885510169160494
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356956225023994}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224298667050426610}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225024677941174346
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504382316914944}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
