@@ -46,7 +46,7 @@ public class ImageAnimation : MonoBehaviour
 		while (true)
 		{
 			Image.sprite = Sprites[index++ % Sprites.Length];
-			yield return new WaitForSeconds((float)(Mathf.Min(Time.deltaTime, 0.3f) / Speed));
+			yield return new WaitForSeconds((float)(Mathf.Min(Time.deltaTime, 0.1f) / Speed));
 		}
 	}
 }

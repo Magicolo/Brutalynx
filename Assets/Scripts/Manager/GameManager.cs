@@ -23,9 +23,11 @@ public class GameManager : Singleton<GameManager>
 
 	IEnumerator GameRoutine()
 	{
+		yield return new WaitForSeconds(2f);
+
 		foreach (var boss in Bosses)
 		{
-			yield return new WaitForSeconds(2f);
+			yield return new WaitForSeconds(3f);
 			var instance = Instantiate(boss, Door.Instance.transform.position, Quaternion.identity, UIManager.Instance.bossRoot.transform);
 
 			while (!instance.IsDone)
