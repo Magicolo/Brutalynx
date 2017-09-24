@@ -10,34 +10,34 @@ public class Dialog : MonoBehaviour
 	public event Action OnDespawn = () => { };
 	public event Action OnDespawned = () => { };
 
-    public AudioSource AudioSource;
+	public AudioSource AudioSource;
 	public Text Text;
 	public float ScaleTime;
 	public float TypewriterSpeed;
 
-    public Voices voices;
-    public List<AudioClip> clips = new List<AudioClip>();
+	public Voices voices;
+	public List<AudioClip> clips = new List<AudioClip>();
 
-	public void Display(CharacterType type, Boss.Statuses ?status, params string[] lines)
+	public void Display(CharacterType type, Boss.Statuses? status, params string[] lines)
 	{
 		StartCoroutine(AnimationRoutine(lines));
-        clips = voices.GetClip(type, status);
-        OnDespawned += StopSound;
+		clips = voices.GetClip(type, status);
+		OnDespawned += StopSound;
 	}
 
-    public void PlayNextSound(int caracNumber)
-    {
-        if(clips.Count > 0)
-        {
-            AudioSource.clip = clips[caracNumber % clips.Count];
-            AudioSource.Play();
-        }
-    }
+	public void PlayNextSound(int caracNumber)
+	{
+		if (clips.Count > 0)
+		{
+			AudioSource.clip = clips[caracNumber % clips.Count];
+			AudioSource.Play();
+		}
+	}
 
-    public void StopSound()
-    {
-        AudioSource.Stop();
-    }
+	public void StopSound()
+	{
+		AudioSource.Stop();
+	}
 
 	IEnumerator AnimationRoutine(string[] lines)
 	{
@@ -56,16 +56,34 @@ public class Dialog : MonoBehaviour
 		foreach (var line in lines)
 		{
 			Text.text = "";
+			var broken = false;
 
-			for (int i = 0; i < line.Length; i++)
+			for (int i = 0; i < line.Length && !broken; i++)
 			{
 				Text.text += line[i];
 
-                PlayNextSound(i);
+				PlayNextSound(i);
 
 				for (float delay = 0; delay < 1f / TypewriterSpeed; delay += Time.deltaTime)
+				{
 					yield return null;
+
+					if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+					{
+						broken = true;
+						break;
+					}
+				}
+
+				if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+				{
+					broken = true;
+					break;
+				}
 			}
+
+			Text.text = line;
+			yield return null;
 
 			while (!Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Space)) yield return null;
 		}
