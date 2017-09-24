@@ -40,8 +40,6 @@ public class PlayerManager : Singleton<PlayerManager>
 
 	public bool ChuTuCrazy(float threshold = 0.5f)
 	{
-		if (Input.GetKey(KeyCode.A)) return true;
-
 		var count =
 			Mathf.Abs(Happiness) >= threshold ? 1 : 0 +
 			Mathf.Abs(Confidence) >= threshold ? 1 : 0 +
@@ -51,8 +49,6 @@ public class PlayerManager : Singleton<PlayerManager>
 
 	public bool ChuTuFuckinBatShitCrazy(float threshold = 0.75f)
 	{
-		if (Input.GetKey(KeyCode.S)) return true;
-
 		var count =
 			Mathf.Abs(Happiness) >= threshold ? 1 : 0 +
 			Mathf.Abs(Confidence) >= threshold ? 1 : 0 +

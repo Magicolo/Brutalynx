@@ -101,6 +101,7 @@ public class MushroomManager : Singleton<MushroomManager>
 		IsWaiting = false;
 		listener(mushroom);
 		listener = m => { };
+		Dude.Instance.SetState(Dude.States.Eating);
 		GameManager.Instance.CheckPlayer();
 	}
 

@@ -11,6 +11,7 @@ public class Dialog : MonoBehaviour
 	public event Action OnDespawned = () => { };
 
 	public AudioSource AudioSource;
+	public Image Image;
 	public Text Text;
 	public float ScaleTime;
 	public float TypewriterSpeed;
@@ -46,11 +47,11 @@ public class Dialog : MonoBehaviour
 		for (float i = 0; i < ScaleTime; i += Time.deltaTime)
 		{
 			var ratio = i / ScaleTime;
-			transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, Mathf.Sqrt(ratio));
+			Image.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, Mathf.Sqrt(ratio));
 			yield return null;
 		}
 
-		transform.localScale = Vector3.one;
+		Image.transform.localScale = Vector3.one;
 		OnSpawned();
 
 		foreach (var line in lines)
@@ -93,11 +94,11 @@ public class Dialog : MonoBehaviour
 		for (float i = 0; i < ScaleTime; i += Time.deltaTime)
 		{
 			var ratio = i / ScaleTime;
-			transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, Mathf.Sqrt(ratio));
+			Image.transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, Mathf.Sqrt(ratio));
 			yield return null;
 		}
 
-		transform.localScale = Vector3.zero;
+		Image.transform.localScale = Vector3.zero;
 		OnDespawned();
 	}
 }

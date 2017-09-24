@@ -96,6 +96,8 @@ public class Boss : MonoBehaviour
 			var consumeDone = false;
 			MushroomManager.Instance.WaitConsumption(m => consumeDone = true);
 			while (!consumeDone) yield return null;
+			while (Dude.Instance.State != Dude.States.Idle) yield return null;
+			yield return new WaitForSeconds(1f);
 
 			var dudeAction =
 				cycle.Dude.FirstOrDefault(a => PlayerManager.Instance.IsStatus(a.Status)) ??

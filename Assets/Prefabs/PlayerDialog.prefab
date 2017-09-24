@@ -129,7 +129,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 82399553886831716}
+  Image: {fileID: 114891716356993666}
   Text: {fileID: 114911653136967796}
   ScaleTime: 0.4
   TypewriterSpeed: 20
