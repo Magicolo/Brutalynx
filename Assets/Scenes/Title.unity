@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 512759237}
   - component: {fileID: 512759239}
   - component: {fileID: 512759238}
+  - component: {fileID: 512759240}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -312,6 +313,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 512759236}
+--- !u!114 &512759240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512759236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6aa4898c243b5749ac84e38644569df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Frequency: 0.75
+  Amplitude: 0.05
+  Center: 1
 --- !u!1 &627238733
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &664685696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -950,7 +965,7 @@ GameObject:
   - component: {fileID: 1169664163}
   - component: {fileID: 1169664162}
   m_Layer: 5
-  m_Name: Demarrer
+  m_Name: Begin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1540,6 +1555,7 @@ GameObject:
   - component: {fileID: 1659325615}
   - component: {fileID: 1659325617}
   - component: {fileID: 1659325616}
+  - component: {fileID: 1659325618}
   m_Layer: 5
   m_Name: Instructions
   m_TagString: Untagged
@@ -1604,6 +1620,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1659325614}
+--- !u!114 &1659325618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659325614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6aa4898c243b5749ac84e38644569df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Frequency: 0.75
+  Amplitude: 0.05
+  Center: 1
 --- !u!1 &1670905954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,8 +1873,9 @@ GameObject:
   - component: {fileID: 1871177616}
   - component: {fileID: 1871177618}
   - component: {fileID: 1871177617}
+  - component: {fileID: 1871177619}
   m_Layer: 5
-  m_Name: Demarrer
+  m_Name: Begin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1907,6 +1938,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1871177615}
+--- !u!114 &1871177619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1871177615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6aa4898c243b5749ac84e38644569df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Frequency: 2
+  Amplitude: 0.1
+  Center: 1
 --- !u!1 &1883884808
 GameObject:
   m_ObjectHideFlags: 0

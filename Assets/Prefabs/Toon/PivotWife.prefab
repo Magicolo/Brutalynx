@@ -160,16 +160,25 @@ MonoBehaviour:
     - Status: -1
       Lines:
       - "My Compassion is the only thing that\u2019s keeping you alive, buddy boy. "
-      - So keep that sarcasm for yourself. Till next time.
+      - So keep that sarcasm for yourself.
       Modifiers:
         Confidence: 0
         Happiness: 0
         Irritability: 0
-    Dude: []
+    Dude:
+    - Status: 0
+      Lines:
+      - I know, you know I like to play around, no harm in it.
+    - Status: 4
+      Lines:
+      - "Oh please, I\u2019ve heard all that before, get the fuck out of my place."
+    - Status: 5
+      Lines:
+      - "Oh please, I\u2019ve heard all that before, get the fuck out of my place."
   LastBossAction:
     Status: -1
     Lines:
-    - oiuoi
+    - "I\u2019ll be seing you soon."
     Modifiers:
       Confidence: 0
       Happiness: 0
@@ -177,7 +186,8 @@ MonoBehaviour:
   LastDudeAction:
     Status: 0
     Lines:
-    - asdpoi
+    - "Jesus, this day can\u2019t get any better."
+    - "I need to take the edge off, I\u2019ll have some more of these babies."
 --- !u!114 &114069332285912578
 MonoBehaviour:
   m_ObjectHideFlags: 1
