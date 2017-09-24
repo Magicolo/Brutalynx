@@ -74,13 +74,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a667bd715f15146beb5078eccba754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Status: 0
+  Status: 1
+  Type: 2
   Animator: {fileID: 95736680780382088}
   Group: {fileID: 225154136826330150}
-  Cycles: []
+  Cycles:
+  - Mushrooms: 090000000a0000000f00000007000000
+    Boss:
+    - Status: 0
+      Lines:
+      - qzdzdqzdzqdzqdqzdzddqzdzqdzqdzqdzqdqzdz
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    - Status: 4
+      Lines:
+      - zdqdzdzqqzzzzzzzzzzzzzzzzzzzzzzz
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - zzdqzqdqzdzqdzdqzddzzzdqzqdqzdzqdzdqzddz
+    - Status: 0
+      Lines:
+      - zzdqzqdqzdzqdzdqzddzzzdqzqdqzdzqdzdqzddzzzdqzqdqzdzqdzdqzddz
   LastBossAction:
     Status: 0
     Lines: []
+    Modifiers:
+      Confidence: 0
+      Happiness: 0
+      Irritability: 0
   LastDudeAction:
     Status: 0
     Lines: []

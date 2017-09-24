@@ -31,7 +31,8 @@ public enum CharacterType
     Dude,
     Wife,
     Kid,
-    GF
+    GF,
+    Spider,
 }
 
 [Serializable]

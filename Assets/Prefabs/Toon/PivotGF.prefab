@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Status: 0
+  Type: 3
   Animator: {fileID: 95863266526145800}
   Group: {fileID: 225010274303305144}
   Cycles:
