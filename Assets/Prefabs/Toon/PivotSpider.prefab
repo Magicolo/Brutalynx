@@ -79,26 +79,135 @@ MonoBehaviour:
   Animator: {fileID: 95393190762047882}
   Group: {fileID: 225074842997095090}
   Cycles:
-  - Mushrooms: 02000000040000000600000008000000
+  - Mushrooms: 0200000005000000070000000a000000
     Boss:
-    - Status: 0
+    - Status: -1
       Lines:
-      - 
+      - Where the hell have you been?
+      - You were supposed to give me that report yesterday.
+      - What the fuck am I going to tell Stevens now?
       Modifiers:
         Confidence: 0
         Happiness: 0
         Irritability: 0
-    Dude: []
+    Dude:
+    - Status: 0
+      Lines:
+      - "I\u2019m sorry, I was sick as a dog."
+    - Status: 4
+      Lines:
+      - "Cool your jets, it\u2019s no big deal."
+    - Status: 5
+      Lines:
+      - "Cool your jets, it\u2019s no big deal."
+    - Status: 6
+      Lines:
+      - "Cool your jets, it\u2019s no big deal."
+  - Mushrooms: 030000000f0000000e0000000d000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "Stevens will have our heads on a plater, do you know what you\u2019ve done?"
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    - Status: 5
+      Lines:
+      - This was a huge opportunity for you and I, you fucked us both.
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - "Stevens is all bark and no bite, everything will be fine, don\u2019t you
+        worry."
+    - Status: 2
+      Lines:
+      - The only thing I see is an old man about to blow his fuse.
+    - Status: 5
+      Lines:
+      - The only thing I see is an old man about to blow his fuse.
+    - Status: 4
+      Lines:
+      - The only thing I see is an old man about to blow his fuse.
+  - Mushrooms: 0c000000020000000400000006000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "You don\u2019t know what you\u2019re talking about."
+      - "This was the last straw, you\u2019re done working for me."
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    - Status: 5
+      Lines:
+      - "I\u2019ve heard enough from you, that\u2019s the last time you\u2019ll fuck
+        me over, you\u2019re done, you\u2019re finished!"
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - "I\u2019m sorry I disappointed you, I wish I could make this up to you someway."
+    - Status: 6
+      Lines:
+      - "Aren\u2019t you taking this a touch to personal?"
+    - Status: 4
+      Lines:
+      - "Aren\u2019t you taking this a touch to personal?"
+  - Mushrooms: 0e000000060000000200000001000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "You know, I\u2019ve always knew you would never amount to anything good. "
+      - What would your father say if he could see you now?
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    - Status: 5
+      Lines:
+      - "Are you kidding me, you\u2019re a real piece of work."
+      - "You\u2019re lucky if you can find work again in this town."
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - At least I gave it a shot, well for a little while.
+      - "Sometimes things don\u2019t work out the way you planned."
+    - Status: 4
+      Lines:
+      - "At least I\u2019m not a jerk off like you. "
+      - "Good luck with everything and say hi to Kelly for me, I hear she\u2019s becoming
+        quite the lady."
+    - Status: 5
+      Lines:
+      - "At least I\u2019m not a jerk off like you. "
+      - "Good luck with everything and say hi to Kelly for me, I hear she\u2019s becoming
+        quite the lady."
   LastBossAction:
-    Status: 0
-    Lines: []
+    Status: -1
+    Lines:
+    - Pathetic.
     Modifiers:
       Confidence: 0
       Happiness: 0
       Irritability: 0
   LastDudeAction:
     Status: 0
-    Lines: []
+    Lines:
+    - "I wasn\u2019t happy working for that asshole anyway. I\u2019ll land a new gig
+      easy, yeah...easy."
+    - Man, what a weird day.
 --- !u!114 &114697609359255300
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -105,7 +105,7 @@ public class Boss : MonoBehaviour
 			yield return new WaitForSeconds(1f);
 
 			var dudeAction =
-				cycle.Dude.FirstOrDefault(a => PlayerManager.Instance.IsStatus(a.Status)) ??
+				cycle.Dude.FirstOrDefault(a => a.Status != global::Statuses.Default && PlayerManager.Instance.IsStatus(a.Status)) ??
 				cycle.Dude.FirstOrDefault(a => a.Status == global::Statuses.Default) ??
 				cycle.Dude.FirstOrDefault();
 

@@ -11,7 +11,7 @@ public class AlphaOscillation : MonoBehaviour
 	void Update()
 	{
 		var color = Image.color;
-		var sine = Mathf.Sin(Time.time * Frequency + GetHashCode()) * Amplitude + Center;
+		var sine = Mathf.Sin(Time.time * Frequency + (GetHashCode() % 100)) * Amplitude + Center;
 		color.a = sine;
 		Image.color = color;
 	}

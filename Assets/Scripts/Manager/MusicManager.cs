@@ -15,8 +15,10 @@ public class MusicManager : Singleton<MushroomManager>
 
 	float _duck = 1f;
 
-	void Start()
+	protected override void Start()
 	{
+		base.Start();
+
 		StartCoroutine(MusicRoutine());
 	}
 

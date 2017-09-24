@@ -106,11 +106,12 @@ MonoBehaviour:
   Animator: {fileID: 95863266526145800}
   Group: {fileID: 225010274303305144}
   Cycles:
-  - Mushrooms: 02000000010000000300000004000000
+  - Mushrooms: 010000000b0000000b00000002000000
     Boss:
     - Status: -1
       Lines:
-      - wetgdfg
+      - "Oh..my\u2026GOD."
+      - "You wouldn\u2019t believe what happened  to me today."
       Modifiers:
         Confidence: 0
         Happiness: 0
@@ -118,17 +119,100 @@ MonoBehaviour:
     Dude:
     - Status: 0
       Lines:
-      - sdfiiosduf
+      - "I\u2019m all ears!"
+    - Status: 6
+      Lines:
+      - "Oh, please, do tell, I can\u2019t wait to hear all about it!"
+    - Status: 4
+      Lines:
+      - "Oh, please, do tell, I can\u2019t wait to hear all about it!"
+  - Mushrooms: 09000000090000000300000006000000
+    Boss:
+    - Status: -1
+      Lines:
+      - Ok, so, Tommy from work, you remember Tommy right?
+      - "Well he tried to kiss me but like, he\u2019s gross and besides, I\u2019m
+        totally like, I'm in LOVE with you."
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - "Well, that\u2019s something, are you really not into him?"
+    - Status: 5
+      Lines:
+      - Why the hell are you telling me this?
+    - Status: 3
+      Lines:
+      - Why the hell are you telling me this?
+    - Status: 2
+      Lines:
+      - Why the hell are you telling me this?
+  - Mushrooms: 0e0000000f0000000900000007000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "Isn\u2019t it clear, because I fucking Love you\u2026 idiot."
+      - Why are you always such a jerk. God.
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    - Status: 5
+      Lines:
+      - "Why in the hell would you say that, don\u2019t you love me?"
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - "I don\u2019t know what to think, you know I\u2019ve been having a hard time
+        lately."
+    - Status: 1
+      Lines:
+      - "Maybe I\u2019m not afraid to tell it like I see it."
+    - Status: 4
+      Lines:
+      - "Maybe I\u2019m not afraid to tell it like I see it."
+    - Status: 6
+      Lines:
+      - "Maybe I\u2019m not afraid to tell it like I see it."
+  - Mushrooms: 080000000a000000030000000d000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "I\u2026 I see. Maybe I should leave you by your lonesome for a little while."
+      - "I\u2019m gonna go hang with the gals, or who knows, maybe Tommy."
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - "I\u2019m fine right here, you do as you please."
+    - Status: 1
+      Lines:
+      - "I guess you should, I\u2019m not good company."
+    - Status: 6
+      Lines:
+      - "I guess you should, I\u2019m not good company."
   LastBossAction:
-    Status: 0
-    Lines: []
+    Status: -1
+    Lines:
+    - "For fuck sakes, grow up\u2026 Bye!"
     Modifiers:
       Confidence: 0
       Happiness: 0
       Irritability: 0
   LastDudeAction:
     Status: 0
-    Lines: []
+    Lines:
+    - I thought she would never leave. Now, where was I.
 --- !u!222 &222538249530460110
 CanvasRenderer:
   m_ObjectHideFlags: 1

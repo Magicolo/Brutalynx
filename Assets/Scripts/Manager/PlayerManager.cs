@@ -71,7 +71,7 @@ public class PlayerManager : Singleton<PlayerManager>
 			case Statuses.Rage: return Irritability <= -0.5f;
 			case Statuses.Depression: return Happiness <= -0.5f;
 			case Statuses.Anxiety: return Happiness >= 0.5f;
-			case Statuses.Recklessness: return Confidence <= 0.5f;
+			case Statuses.Recklessness: return Confidence >= 0.5f;
 			case Statuses.Numbess: return Irritability >= 0.5f;
 			case Statuses.Default: return true;
 		}
