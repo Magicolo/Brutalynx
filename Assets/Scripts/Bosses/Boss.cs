@@ -135,7 +135,6 @@ public class Boss : MonoBehaviour
 				PlayerManager.Instance.Confidence += action.Modifiers.Confidence;
 				PlayerManager.Instance.Irritability += action.Modifiers.Irritability;
 				PlayerManager.Instance.Happiness += action.Modifiers.Happiness;
-				GameManager.Instance.CheckPlayer();
 			},
 			() => done = true);
 		while (!done) yield return null;

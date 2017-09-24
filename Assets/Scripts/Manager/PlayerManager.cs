@@ -38,19 +38,6 @@ public class PlayerManager : Singleton<PlayerManager>
 	[Range(-1f, 1f)]
 	public float Irritability;
 
-	//void Update()
-	//{
-	//	// TODO REMOVE BEFORE BUILD
-	//	if (Input.GetKeyDown(KeyCode.A))
-	//		ResetTraits();
-	//	else if (Input.GetKeyDown(KeyCode.S))
-	//	{
-	//		Happiness = Mathf.Clamp(UnityEngine.Random.value * 2f - 1f, -0.9f, 0.9f);
-	//		Confidence = Mathf.Clamp(UnityEngine.Random.value * 2f - 1f, -0.9f, 0.9f);
-	//		Irritability = Mathf.Clamp(UnityEngine.Random.value * 2f - 1f, -0.9f, 0.9f);
-	//	}
-	//}
-
 	public void ResetTraits()
 	{
 		Happiness = 0f;
@@ -58,26 +45,14 @@ public class PlayerManager : Singleton<PlayerManager>
 		Irritability = 0f;
 	}
 
-	public bool ChuTuCrazy(/*float threshold = 0.6f*/)
+	public bool ChuTuCrazy()
 	{
 		return Mathf.Abs(Happiness) + Mathf.Abs(Confidence) + Mathf.Abs(Irritability) > 1f;
-
-		//var count =
-		//	(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
-		//	(Mathf.Abs(Confidence) >= threshold ? 1 : 0) +
-		//	(Mathf.Abs(Irritability) >= threshold ? 1 : 0);
-		//return count >= 2;
 	}
 
-	public bool ChuTuFuckinBatShitCrazy(/*float threshold = 0.8f*/)
+	public bool ChuTuFuckinBatShitCrazy()
 	{
 		return Mathf.Abs(Happiness) + Mathf.Abs(Confidence) + Mathf.Abs(Irritability) >= 1.5f;
-
-		//var count =
-		//	(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
-		//	(Mathf.Abs(Confidence) >= threshold ? 1 : 0) +
-		//	(Mathf.Abs(Irritability) >= threshold ? 1 : 0);
-		//return count >= 2;
 	}
 
 	public bool IsStatus(Statuses status)

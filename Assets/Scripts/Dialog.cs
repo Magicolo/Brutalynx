@@ -63,7 +63,8 @@ public class Dialog : MonoBehaviour
 			{
 				Text.text += line[i];
 
-				PlayNextSound(i);
+				if (i % 2 == 0)
+					PlayNextSound(i / 2);
 
 				for (float delay = 0; delay < 1f / TypewriterSpeed; delay += Time.deltaTime)
 				{

@@ -1148,7 +1148,7 @@ MonoBehaviour:
     Choose the right mushrooms to find your best possible outcome.
 
 
-    For more information, please consult the manual.'
+    For more information, please consult the mushroom sheet.'
 --- !u!222 &1225137766
 CanvasRenderer:
   m_ObjectHideFlags: 0
