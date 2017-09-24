@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class MushroomManager : Singleton<MushroomManager>
 {
+	public bool IsWaiting;
 	public readonly Stack<Mushrooms> History = new Stack<Mushrooms>();
 
 	Action<Mushrooms> listener = m => { };
@@ -72,6 +73,7 @@ public class MushroomManager : Singleton<MushroomManager>
 		//}
 
 		History.Push(mushroom);
+		IsWaiting = false;
 		listener(mushroom);
 		listener = m => { };
 	}
@@ -79,6 +81,7 @@ public class MushroomManager : Singleton<MushroomManager>
 	public void WaitConsumption(Action<Mushrooms> consumed)
 	{
 		listener += consumed;
+		IsWaiting = true;
 	}
 }
 

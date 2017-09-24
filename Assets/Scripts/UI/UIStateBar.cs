@@ -8,7 +8,7 @@ public class UIStateBar : MonoBehaviour
 	public Scrollbar ScrollLeft;
 	public Scrollbar ScrollRight;
 
-	public Status status;
+	public Traits status;
 
 	public Image HandleLeft;
 	public Image HandleRight;
@@ -51,17 +51,16 @@ public class UIStateBar : MonoBehaviour
 
 	private void Update()
 	{
-
         switch (status)
         {
-            case Status.Confidence:
-                SetState((float)PlayerManager.Instance.Confidence);
+            case Traits.Confidence:
+                SetState(PlayerManager.Instance.Confidence);
                 break;
-            case Status.Happiness:
-                SetState((float)PlayerManager.Instance.Happiness);
+            case Traits.Happiness:
+                SetState(PlayerManager.Instance.Happiness);
                 break;
-            case Status.Alertness:
-                SetState((float)PlayerManager.Instance.Alertness);
+            case Traits.Alertness:
+                SetState(PlayerManager.Instance.Alertness);
                 break;
         }
         StateValue = Mathf.Lerp(StateValue, StateDestination, Time.deltaTime * Speed);

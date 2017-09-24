@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-	public BossBase[] Bosses;
+	public Boss[] Bosses;
 
 	void OnEnable()
 	{

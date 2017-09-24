@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bosses:
-  - {fileID: 114901157222421272, guid: d677e000f0ff211419202ca4495348c8, type: 2}
+  - {fileID: 114063074520513806, guid: 5984c719db50b04468cac2fa673c9632, type: 2}
 --- !u!114 &114577003369200010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1719246c63de0a24f833461a200685fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsWaiting: 0
 --- !u!114 &114733454687160072
 MonoBehaviour:
   m_ObjectHideFlags: 1
