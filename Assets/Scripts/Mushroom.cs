@@ -3,10 +3,21 @@ using UnityEngine.UI;
 
 public enum Mushrooms
 {
-	Red,
-	Green,
-	Yellow,
-	Blue
+	PsilocybinCubensis_1 = 1,
+	PluteusSalicinus_2 = 2,
+	GymnopilusLuteoviridis_3 = 3,
+	PanaeolusCinctulus_4 = 4,
+	InocybeCoelestium_5 = 5,
+	ConocybeKuehneriana_6 = 6,
+	PsilocybinSemilanceata_7 = 7,
+	PanaeolusSubbalteatus_8 = 8,
+	InocybeHaemacta_9 = 9,
+	ConocybeCyanopus_10 = 10,
+	GymnopilusValidipes_11 = 11,
+	PluteusBrunneidiscus_12 = 12,
+	CopelandiaBispora_13 = 13,
+	GymnopilusAeruginosus_14 = 14,
+	InfinitusFractaliosis_15 = 15
 }
 
 public class Mushroom : MonoBehaviour

@@ -15,12 +15,13 @@ public class BossAction
 {
 	public Boss.Statuses Status;
 	public string[] Lines;
+	public StatusModifier Modifiers;
 }
 
 [Serializable]
 public class BossCycle
 {
-	public Mushrooms[] Mushrooms;
+	public Mushrooms[] Mushrooms = new Mushrooms[4];
 	public BossAction[] Boss;
 	public DudeAction[] Dude;
 }
@@ -30,6 +31,14 @@ public enum BossType
     Wife,
     Kid,
     GF
+}
+
+[Serializable]
+public class StatusModifier
+{
+	public float Confidence;
+	public float Happiness;
+	public float Irritability;
 }
 
 public class Boss : MonoBehaviour
@@ -44,7 +53,7 @@ public class Boss : MonoBehaviour
 		Monster = 4,
 		Panick = 5,
 
-    }
+	}
 
 	public bool IsDone { get; private set; }
 
@@ -102,7 +111,15 @@ public class Boss : MonoBehaviour
 		if (action == null || action.Lines.Length == 0) yield break;
 
 		var done = false;
-		Speak(action.Lines, () => done = true);
+		Speak(
+			action.Lines,
+			() =>
+			{
+				PlayerManager.Instance.Confidence += action.Modifiers.Confidence;
+				PlayerManager.Instance.Irritability += action.Modifiers.Irritability;
+				PlayerManager.Instance.Happiness += action.Modifiers.Happiness;
+			},
+			() => done = true);
 		while (!done) yield return null;
 	}
 
@@ -115,9 +132,10 @@ public class Boss : MonoBehaviour
 		while (!done) yield return null;
 	}
 
-	protected void Speak(string[] lines, Action done)
+	protected void Speak(string[] lines, Action preDone = null, Action done = null)
 	{
 		var dialog = DialogManager.Instance.Spawn(lines, transform.position, Characters.NPC);
+		dialog.OnDespawn += preDone;
 		dialog.OnDespawned += done;
 	}
 
