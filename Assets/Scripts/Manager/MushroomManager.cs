@@ -101,6 +101,7 @@ public class MushroomManager : Singleton<MushroomManager>
 		IsWaiting = false;
 		listener(mushroom);
 		listener = m => { };
+		GameManager.Instance.CheckPlayer();
 	}
 
 	public void WaitConsumption(Action<Mushrooms> consumed)

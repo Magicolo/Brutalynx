@@ -38,15 +38,6 @@ public class PlayerManager : Singleton<PlayerManager>
 	[Range(-1f, 1f)]
 	public float Irritability;
 
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			Happiness += 1983759;
-			GameManager.Instance.CheckPlayer();
-		}
-	}
-
 	public bool IsStatus(Statuses status)
 	{
 		switch (status)
