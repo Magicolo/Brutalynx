@@ -58,7 +58,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
 	public bool ChuTuFuckinBatShitCrazy(/*float threshold = 0.8f*/)
 	{
-		return Mathf.Abs(Happiness) + Mathf.Abs(Confidence) + Mathf.Abs(Irritability) > 1.5f;
+		return Mathf.Abs(Happiness) + Mathf.Abs(Confidence) + Mathf.Abs(Irritability) >= 1.5f;
 
 		//var count =
 		//	(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
