@@ -86,6 +86,7 @@ public class Boss : MonoBehaviour
 
 			foreach (var item in PlayBossAction(bossAction)) yield return item;
 
+			MushroomManager.Instance.AvailableMushrooms = cycle.Mushrooms ?? new Mushrooms[0];
 			var consumeDone = false;
 			MushroomManager.Instance.WaitConsumption(m => consumeDone = true);
 			while (!consumeDone) yield return null;
