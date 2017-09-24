@@ -38,6 +38,19 @@ public class PlayerManager : Singleton<PlayerManager>
 	[Range(-1f, 1f)]
 	public float Irritability;
 
+	//void Update()
+	//{
+	//	// TODO REMOVE BEFORE BUILD
+	//	if (Input.GetKeyDown(KeyCode.A))
+	//		ResetTraits();
+	//	else if (Input.GetKeyDown(KeyCode.S))
+	//	{
+	//		Happiness = Mathf.Clamp(UnityEngine.Random.value * 2f - 1f, -0.9f, 0.9f);
+	//		Confidence = Mathf.Clamp(UnityEngine.Random.value * 2f - 1f, -0.9f, 0.9f);
+	//		Irritability = Mathf.Clamp(UnityEngine.Random.value * 2f - 1f, -0.9f, 0.9f);
+	//	}
+	//}
+
 	public void ResetTraits()
 	{
 		Happiness = 0f;

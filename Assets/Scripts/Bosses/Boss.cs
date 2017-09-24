@@ -101,6 +101,7 @@ public class Boss : MonoBehaviour
 			var consumeDone = false;
 			MushroomManager.Instance.WaitConsumption(m => consumeDone = true);
 			while (!consumeDone) yield return null;
+			//while (!consumeDone) { if (Input.GetKeyDown(KeyCode.D)) { Door.Instance.Exit(Group, () => IsDone = true); yield break; } else yield return null; }
 			while (Dude.Instance.State != Dude.States.Idle) yield return null;
 			yield return new WaitForSeconds(1f);
 
