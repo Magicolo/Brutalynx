@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class Flash : Singleton<Flash>
 {
 	public Image Image;
+	public bool IsFading;
 
 	protected override void Awake()
 	{
 		base.Awake();
 
-		FadeOut();
+		FadeOut(force: true);
 	}
 
 	public void FadeIn(Action done = null)
@@ -19,13 +20,14 @@ public class Flash : Singleton<Flash>
 		StartCoroutine(FadeInRoutine(done ?? (() => { })));
 	}
 
-	public void FadeOut(float duration = 2f, Action done = null)
+	public void FadeOut(float duration = 2f, Action done = null, bool force = false)
 	{
-		StartCoroutine(FadeOutRoutine(duration, done ?? (() => { })));
+		if (force || !IsFading) StartCoroutine(FadeOutRoutine(duration, done ?? (() => { })));
 	}
 
 	IEnumerator FadeInRoutine(Action done)
 	{
+		IsFading = true;
 		yield return new WaitForSeconds(1f);
 
 		var duration = 4f;
@@ -47,10 +49,12 @@ public class Flash : Singleton<Flash>
 		Image.color = color;
 		yield return new WaitForSeconds(2f);
 		done();
+		IsFading = false;
 	}
 
 	IEnumerator FadeOutRoutine(float duration, Action done)
 	{
+		IsFading = true;
 		var color = Image.color;
 		color.a = 1f;
 		Image.color = color;
@@ -67,5 +71,6 @@ public class Flash : Singleton<Flash>
 		Image.color = color;
 		Image.enabled = false;
 		done();
+		IsFading = false;
 	}
 }

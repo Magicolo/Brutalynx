@@ -71,6 +71,11 @@ public class Boss : MonoBehaviour
 		StartCoroutine(BossRoutine());
 	}
 
+	void OnDisable()
+	{
+		Room.Instance.SetState(Room.States.Normal);
+	}
+
 	void Update()
 	{
 		SetStatus(PlayerManager.Instance.ChuTuCrazy() ? Statuses.Panick : Statuses.Idle);

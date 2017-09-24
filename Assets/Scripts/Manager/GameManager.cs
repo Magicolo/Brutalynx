@@ -31,6 +31,7 @@ public class GameManager : Singleton<GameManager>
 			while (!instance.IsDone)
 				yield return null;
 
+			PlayerManager.Instance.ResetTraits();
 			Destroy(instance);
 		}
 	}

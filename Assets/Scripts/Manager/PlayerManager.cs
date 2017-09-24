@@ -38,22 +38,38 @@ public class PlayerManager : Singleton<PlayerManager>
 	[Range(-1f, 1f)]
 	public float Irritability;
 
+	void Update()
+	{
+		if (Input.GetKey(KeyCode.A))
+		{
+			Happiness = 0.8f;
+			Confidence = 0.8f;
+		}
+	}
+
+	public void ResetTraits()
+	{
+		Happiness = 0f;
+		Confidence = 0f;
+		Irritability = 0f;
+	}
+
 	public bool ChuTuCrazy(float threshold = 0.5f)
 	{
 		var count =
-			Mathf.Abs(Happiness) >= threshold ? 1 : 0 +
-			Mathf.Abs(Confidence) >= threshold ? 1 : 0 +
-			Mathf.Abs(Irritability) >= threshold ? 1 : 0;
-		return count > 2;
+			(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
+			(Mathf.Abs(Confidence) >= threshold ? 1 : 0) +
+			(Mathf.Abs(Irritability) >= threshold ? 1 : 0);
+		return count >= 2;
 	}
 
 	public bool ChuTuFuckinBatShitCrazy(float threshold = 0.75f)
 	{
 		var count =
-			Mathf.Abs(Happiness) >= threshold ? 1 : 0 +
-			Mathf.Abs(Confidence) >= threshold ? 1 : 0 +
-			Mathf.Abs(Irritability) >= threshold ? 1 : 0;
-		return count > 2;
+			(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
+			(Mathf.Abs(Confidence) >= threshold ? 1 : 0) +
+			(Mathf.Abs(Irritability) >= threshold ? 1 : 0);
+		return count >= 2;
 	}
 
 	public bool IsStatus(Statuses status)
