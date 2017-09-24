@@ -79,7 +79,7 @@ MonoBehaviour:
   Animator: {fileID: 95054210510906238}
   Group: {fileID: 225196877917427986}
   Cycles:
-  - Mushrooms: 01000000020000000300000004000000
+  - Mushrooms: 0700000003000000090000000b000000
     Boss:
     - Status: -1
       Lines:
@@ -88,9 +88,9 @@ MonoBehaviour:
         answer it."
       - "Don\u2019t tell me you\u2019re trying to back out of our little agreement?"
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: 0.15
+        Happiness: -0.2
+        Irritability: -0.5
     Dude:
     - Status: 0
       Lines:
@@ -103,7 +103,7 @@ MonoBehaviour:
       Lines:
       - "\u2026I\u2019ve been\u2026I\u2019ve just been sitting here, waiting\u2026waiting
         for you."
-  - Mushrooms: 05000000060000000700000008000000
+  - Mushrooms: 02000000040000000f0000000a000000
     Boss:
     - Status: -1
       Lines:
@@ -111,9 +111,9 @@ MonoBehaviour:
         is precious and I ain\u2019t got none to waste on you."
       - Now where the hell did you put it?
       Modifiers:
-        Confidence: 0
-        Happiness: 0
-        Irritability: 0
+        Confidence: -0.3
+        Happiness: -0.2
+        Irritability: -0.3
     Dude:
     - Status: 0
       Lines:
@@ -125,7 +125,7 @@ MonoBehaviour:
     - Status: 3
       Lines:
       - "Euh\u2026.Put what, where?"
-  - Mushrooms: 090000000a0000000b0000000c000000
+  - Mushrooms: 0c00000001000000060000000d000000
     Boss:
     - Status: -1
       Lines:
@@ -135,15 +135,15 @@ MonoBehaviour:
         off the hook\u2026 for now."
       - But when I do come back, your ass better be ready to pay up.
       Modifiers:
-        Confidence: 0
-        Happiness: 0
+        Confidence: -0.1
+        Happiness: -0.5
         Irritability: 0
     - Status: 5
       Lines:
       - Are you being funny? Maybe I should just beat your ass.
       Modifiers:
-        Confidence: 0
-        Happiness: 0
+        Confidence: -0.1
+        Happiness: -0.5
         Irritability: 0
     Dude:
     - Status: 0
@@ -155,15 +155,15 @@ MonoBehaviour:
     - Status: 5
       Lines:
       - Should I pay you for that too?
-  - Mushrooms: 0d0000000e0000000f00000002000000
+  - Mushrooms: 06000000070000000c0000000e000000
     Boss:
     - Status: -1
       Lines:
       - "My Compassion is the only thing that\u2019s keeping you alive, buddy boy. "
       - So keep that sarcasm for yourself.
       Modifiers:
-        Confidence: 0
-        Happiness: 0
+        Confidence: 0.75
+        Happiness: -0.25
         Irritability: 0
     Dude:
     - Status: 0
