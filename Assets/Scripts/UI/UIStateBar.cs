@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class UIStateBar : MonoBehaviour
 {
-
-	public Text TextName;
 	public Scrollbar ScrollLeft;
 	public Scrollbar ScrollRight;
 
@@ -17,27 +15,9 @@ public class UIStateBar : MonoBehaviour
 
 	public Color Current;
 
-	public string StateName;
-
 	public float StateValue;
 	public float StateDestination;
 	public float Speed;
-
-
-	public void Init()
-	{
-		TextName.text = StateName;
-	}
-
-	private void Start()
-	{
-		Init();
-	}
-
-	private void Awake()
-	{
-		Init();
-	}
 
 	public void SetState(float stateValue)
 	{
@@ -63,10 +43,4 @@ public class UIStateBar : MonoBehaviour
 		HandleLeft.color = Current;
 		HandleRight.color = Current;
 	}
-
-	private void OnValidate()
-	{
-		Init();
-	}
-
 }
