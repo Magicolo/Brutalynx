@@ -46,7 +46,7 @@ public class Boss : MonoBehaviour
 		Monster = 4,
 		Panick = 5,
 
-    }
+	}
 
 	public bool IsDone { get; private set; }
 
