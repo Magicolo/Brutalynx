@@ -9,36 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1356956225023994}
+  m_RootGameObject: {fileID: 1826306595480922}
   m_IsPrefabParent: 1
---- !u!1 &1356956225023994
+--- !u!1 &1402517618699048
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224885510169160494}
-  - component: {fileID: 114063074520513806}
-  m_Layer: 5
-  m_Name: PivotWife
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1504382316914944
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224298667050426610}
-  - component: {fileID: 222584597195168344}
-  - component: {fileID: 114730836261457390}
-  - component: {fileID: 225024677941174346}
-  - component: {fileID: 95058636901253452}
+  - component: {fileID: 224205773644212114}
+  - component: {fileID: 114908415357674838}
+  - component: {fileID: 222410821737951620}
+  - component: {fileID: 114069332285912578}
+  - component: {fileID: 225196877917427986}
+  - component: {fileID: 95054210510906238}
   m_Layer: 5
   m_Name: Wife
   m_TagString: Untagged
@@ -46,13 +31,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &95058636901253452
+--- !u!1 &1826306595480922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224579012114380724}
+  m_Layer: 5
+  m_Name: PivotWife
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &95054210510906238
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1504382316914944}
+  m_GameObject: {fileID: 1402517618699048}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1379aebf1ce06c4489237432fd7b4629, type: 2}
@@ -63,38 +63,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114063074520513806
+--- !u!114 &114069332285912578
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1356956225023994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a667bd715f15146beb5078eccba754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Status: 0
-  Animator: {fileID: 95058636901253452}
-  Group: {fileID: 225024677941174346}
-  Cycles:
-  - Boss:
-    - Status: -1
-      Lines:
-      - ASDSIYU
-    Dude:
-    - Status: 0
-      Lines:
-      - aSIFYSIUGYuiy
-    - Status: 1
-      Lines:
-      - aSIFYSIUGYuiy
---- !u!114 &114730836261457390
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1504382316914944}
+  m_GameObject: {fileID: 1402517618699048}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -116,55 +90,73 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!222 &222584597195168344
+--- !u!114 &114908415357674838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402517618699048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b1acdcba240484e9ea735fb1dd03d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Status: 0
+  Animator: {fileID: 95054210510906238}
+  State: 0
+  Group: {fileID: 225196877917427986}
+  ExFuriousDialog1: []
+  ExDialog1: []
+  DudeDialog1: []
+--- !u!222 &222410821737951620
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1504382316914944}
---- !u!224 &224298667050426610
+  m_GameObject: {fileID: 1402517618699048}
+--- !u!224 &224205773644212114
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1504382316914944}
+  m_GameObject: {fileID: 1402517618699048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 224885510169160494}
+  m_Father: {fileID: 224579012114380724}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: -3}
+  m_AnchoredPosition: {x: -0, y: -8.6}
   m_SizeDelta: {x: 32, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224885510169160494
+--- !u!224 &224579012114380724
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1356956225023994}
+  m_GameObject: {fileID: 1826306595480922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224298667050426610}
+  - {fileID: 224205773644212114}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 30.500002, y: 16}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &225024677941174346
+--- !u!225 &225196877917427986
 CanvasGroup:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1504382316914944}
+  m_GameObject: {fileID: 1402517618699048}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
