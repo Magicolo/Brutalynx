@@ -12,13 +12,20 @@ public class GameManager : Singleton<GameManager>
 			Mathf.Abs(PlayerManager.Instance.Irritability) >= 1f ||
 			Mathf.Abs(PlayerManager.Instance.Happiness) >= 1f)
 		{
-			Flash.Instance.FadeIn(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
+			StartCoroutine(VomitRoutine());
 		}
 	}
 
 	void OnEnable()
 	{
 		StartCoroutine(GameRoutine());
+	}
+
+	IEnumerator VomitRoutine()
+	{
+		Dude.Instance.SetState(Dude.States.Vomitting);
+		yield return new WaitForSeconds(1.25f);
+		Flash.Instance.FadeIn(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
 	}
 
 	IEnumerator GameRoutine()

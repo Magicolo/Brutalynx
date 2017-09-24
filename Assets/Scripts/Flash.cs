@@ -28,9 +28,8 @@ public class Flash : Singleton<Flash>
 	IEnumerator FadeInRoutine(Action done)
 	{
 		IsFading = true;
-		yield return new WaitForSeconds(1f);
 
-		var duration = 4f;
+		var duration = 2f;
 		var color = Image.color;
 		var position = UIManager.Instance.Root.position;
 		color.a = 0f;

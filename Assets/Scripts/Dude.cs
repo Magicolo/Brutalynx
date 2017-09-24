@@ -6,17 +6,21 @@ public class Dude : Singleton<Dude>
 	public enum States
 	{
 		Idle,
-		Eating
+		Eating,
+		Vomitting,
+		Dead
 	}
 
 	public States State;
 	public GameObject Idle;
 	public ImageAnimation Eating;
+	public ImageAnimation Vomit;
 
 	void Update()
 	{
 		Idle.SetActive(State == States.Idle);
 		Eating.gameObject.SetActive(State == States.Eating);
+		Vomit.gameObject.SetActive(State == States.Vomitting || State == States.Dead);
 	}
 
 	public void Speak(string[] lines, Action done = null)
@@ -32,6 +36,10 @@ public class Dude : Singleton<Dude>
 			case States.Eating:
 				Eating.gameObject.SetActive(true);
 				Eating.PlayOnce(() => SetState(States.Idle));
+				break;
+			case States.Vomitting:
+				Vomit.gameObject.SetActive(true);
+				Vomit.PlayOnce(() => SetState(States.Dead));
 				break;
 		}
 

@@ -42,8 +42,9 @@ public class PlayerManager : Singleton<PlayerManager>
 	{
 		if (Input.GetKey(KeyCode.A))
 		{
-			Happiness = 0.8f;
-			Confidence = 0.8f;
+			Happiness = 214.8f;
+			Confidence = 35.8f;
+			GameManager.Instance.CheckPlayer();
 		}
 	}
 

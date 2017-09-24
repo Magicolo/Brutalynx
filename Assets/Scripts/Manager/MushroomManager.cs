@@ -121,7 +121,7 @@ public class MushroomManager : Singleton<MushroomManager>
 	{
 		Dude.Instance.SetState(Dude.States.Eating);
 
-		while (Dude.Instance.State != Dude.States.Idle)
+		while (Dude.Instance.State == Dude.States.Eating)
 			yield return null;
 
 		done();

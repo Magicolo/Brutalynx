@@ -19,7 +19,7 @@ public class ImageAnimation : MonoBehaviour
 		StopAllCoroutines();
 	}
 
-	public void PlayOnce(Action done)
+	public void PlayOnce(Action done = null)
 	{
 		StopAllCoroutines();
 		StartCoroutine(AnimationOnceRoutine(done ?? (() => { })));
@@ -32,7 +32,7 @@ public class ImageAnimation : MonoBehaviour
 		for (int i = 0; i < Sprites.Length; i++)
 		{
 			Image.sprite = Sprites[i];
-			yield return new WaitForSeconds((float)(Mathf.Min(Time.deltaTime, 0.3f) / Speed));
+			yield return new WaitForSeconds((float)(Mathf.Min(Time.deltaTime, 0.05f) / Speed));
 		}
 
 		done();
@@ -46,7 +46,7 @@ public class ImageAnimation : MonoBehaviour
 		while (true)
 		{
 			Image.sprite = Sprites[index++ % Sprites.Length];
-			yield return new WaitForSeconds((float)(Mathf.Min(Time.deltaTime, 0.1f) / Speed));
+			yield return new WaitForSeconds((float)(Mathf.Min(Time.deltaTime, 0.05f) / Speed));
 		}
 	}
 }
