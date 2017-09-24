@@ -1,9 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum Status
+public enum Statuses
+{
+	Default,
+	Depressive,
+	Anxious,
+	Drowsy,
+	Alert,
+	Paranoid,
+	Narcisic
+}
+
+public enum Traits
 {
 	Confidence,
 	Happiness,
@@ -12,7 +22,7 @@ public enum Status
 
 public struct StatusEffect
 {
-	public Status Status;
+	public Statuses Status;
 	public TimeSpan Time;
 	public TimeSpan Delay;
 	public double Remaining;
@@ -34,6 +44,11 @@ public class PlayerManager : Singleton<PlayerManager>
 	public bool IsEuphoric { get { return Happiness >= 1f; } }
 	public bool IsOversensitive { get { return Alertness >= 1f; } }
 
+
+	public bool IsStatus(Statuses status)
+	{
+		return true;
+	}
 	//readonly List<StatusEffect> _effects = new List<StatusEffect>();
 
 	//void Update()

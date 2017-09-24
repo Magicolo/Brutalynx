@@ -8,7 +8,7 @@ public class UIStateBar : MonoBehaviour
 	public Scrollbar ScrollLeft;
 	public Scrollbar ScrollRight;
 
-	public Status status;
+	public Traits status;
 
 	public Image HandleLeft;
 	public Image HandleRight;
@@ -44,13 +44,13 @@ public class UIStateBar : MonoBehaviour
 	{
 		switch (status)
 		{
-			case Status.Confidence:
+			case Traits.Confidence:
 				SetState(PlayerManager.Instance.Confidence);
 				break;
-			case Status.Happiness:
+			case Traits.Happiness:
 				SetState(PlayerManager.Instance.Happiness);
 				break;
-			case Status.Alertness:
+			case Traits.Alertness:
 				SetState(PlayerManager.Instance.Alertness);
 				break;
 		}
