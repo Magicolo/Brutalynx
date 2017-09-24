@@ -16,8 +16,10 @@ public class GameManager : Singleton<GameManager>
 		}
 	}
 
-	void OnEnable()
+	protected override void OnEnable()
 	{
+		base.OnEnable();
+
 		StartCoroutine(GameRoutine());
 	}
 
@@ -31,7 +33,7 @@ public class GameManager : Singleton<GameManager>
 	{
 		Dude.Instance.SetState(Dude.States.Vomitting);
 		yield return new WaitForSeconds(1.25f);
-		Flash.Instance.FadeIn(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
+		Flash.Instance.FadeIn(() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex));
 	}
 
 	IEnumerator GameRoutine()

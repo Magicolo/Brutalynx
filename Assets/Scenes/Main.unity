@@ -280,6 +280,21 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114563698594434538, guid: 3178c60689939514c873163a5cdfa4e7,
+        type: 2}
+      propertyPath: Frequency
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114563698594434538, guid: 3178c60689939514c873163a5cdfa4e7,
+        type: 2}
+      propertyPath: Amplitude
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114563698594434538, guid: 3178c60689939514c873163a5cdfa4e7,
+        type: 2}
+      propertyPath: Center
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3178c60689939514c873163a5cdfa4e7, type: 2}
   m_IsPrefabParent: 0
@@ -322,6 +337,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114154734224799880, guid: 24b1337b8cac8634990b0910eae95e8f,
+        type: 2}
+      propertyPath: Bosses.Array.data[0]
+      value: 
+      objectReference: {fileID: 114586615413798614, guid: a314b3c1242e533469c759305065e062,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24b1337b8cac8634990b0910eae95e8f, type: 2}
   m_IsPrefabParent: 0

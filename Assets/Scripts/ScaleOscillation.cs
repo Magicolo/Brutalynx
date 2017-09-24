@@ -8,7 +8,7 @@ public class ScaleOscillation : MonoBehaviour
 
 	void Update()
 	{
-		var sine = Mathf.Sin(Time.time * Frequency + GetHashCode()) * Amplitude + Center;
+		var sine = Mathf.Sin(Time.time * Frequency + (GetHashCode() % 100)) * Amplitude + Center;
 		var scale = Vector3.one * sine;
 		transform.localScale = scale;
 	}
