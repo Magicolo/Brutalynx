@@ -23,7 +23,8 @@ public class Dialog : MonoBehaviour
 
 		for (float i = 0; i < ScaleTime; i += Time.deltaTime)
 		{
-			transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, i / ScaleTime);
+			var ratio = i / ScaleTime;
+			transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, Mathf.Sqrt(ratio));
 			yield return null;
 		}
 
@@ -42,14 +43,13 @@ public class Dialog : MonoBehaviour
 					yield return null;
 			}
 
-			while (!Input.GetKeyDown(KeyCode.Mouse0)) yield return null;
+			while (!Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Space)) yield return null;
 		}
-
-		yield return new WaitForSeconds(2f);
 
 		for (float i = 0; i < ScaleTime; i += Time.deltaTime)
 		{
-			transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, i / ScaleTime);
+			var ratio = i / ScaleTime;
+			transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, Mathf.Sqrt(ratio));
 			yield return null;
 		}
 

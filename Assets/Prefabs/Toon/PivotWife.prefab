@@ -79,8 +79,13 @@ MonoBehaviour:
   State: 0
   Group: {fileID: 225024677941174346}
   ExFuriousDialog1: []
-  ExDialog1: []
-  DudeDialog1: []
+  ExDialog1:
+  - Baluchon de la merveillance incredule.
+  - "Excellent, d\xE9sanbusque toi-."
+  DudeDialog1:
+  - Bonifacceesseee
+  - J'suis pas vraiment d'accord avec ton excellent point.
+  - Je demeurre dans ma position courante.
 --- !u!114 &114730836261457390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -8}
+  m_AnchoredPosition: {x: 3, y: -3}
   m_SizeDelta: {x: 32, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224885510169160494

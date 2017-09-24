@@ -37,9 +37,9 @@ public class ExBoss : BossBase
 				break;
 			case States.ExDialog1:
 				if (Status == Statuses.Furious)
-					Speak(ExDialog1, () => SetState(States.WaitingConsumption1));
-				else
 					Speak(ExFuriousDialog1, () => SetState(States.WaitingConsumption1));
+				else
+					Speak(ExDialog1, () => SetState(States.WaitingConsumption1));
 				break;
 			case States.WaitingConsumption1:
 				MushroomManager.Instance.WaitConsumption(m => SetState(States.DudeDialog1));
