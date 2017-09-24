@@ -76,6 +76,7 @@ public class Boss : MonoBehaviour
 		var enterDone = false;
 		Door.Instance.Enter(Group, () => enterDone = true);
 		while (!enterDone) yield return null;
+		GameManager.Instance.CheckPlayer();
 
 		foreach (var cycle in Cycles)
 		{
@@ -85,6 +86,7 @@ public class Boss : MonoBehaviour
 				cycle.Boss.FirstOrDefault();
 
 			foreach (var item in PlayBossAction(bossAction)) yield return item;
+			GameManager.Instance.CheckPlayer();
 
 			MushroomManager.Instance.AvailableMushrooms = cycle.Mushrooms ?? new Mushrooms[0];
 			var consumeDone = false;
@@ -97,15 +99,18 @@ public class Boss : MonoBehaviour
 				cycle.Dude.FirstOrDefault();
 
 			foreach (var item in PlayDudeAction(dudeAction)) yield return item;
+			GameManager.Instance.CheckPlayer();
 		}
 
 		foreach (var item in PlayBossAction(LastBossAction)) yield return item;
+		GameManager.Instance.CheckPlayer();
 
 		var exitDone = false;
 		Door.Instance.Exit(Group, () => exitDone = true);
 		while (!exitDone) yield return null;
 
 		foreach (var item in PlayDudeAction(LastDudeAction)) yield return item;
+		GameManager.Instance.CheckPlayer();
 		IsDone = true;
 	}
 
@@ -121,9 +126,11 @@ public class Boss : MonoBehaviour
 				PlayerManager.Instance.Confidence += action.Modifiers.Confidence;
 				PlayerManager.Instance.Irritability += action.Modifiers.Irritability;
 				PlayerManager.Instance.Happiness += action.Modifiers.Happiness;
+				GameManager.Instance.CheckPlayer();
 			},
 			() => done = true);
 		while (!done) yield return null;
+		GameManager.Instance.CheckPlayer();
 	}
 
 	IEnumerable PlayDudeAction(DudeAction action)
@@ -133,6 +140,7 @@ public class Boss : MonoBehaviour
 		var done = false;
 		Dude.Instance.Speak(action.Lines, () => done = true);
 		while (!done) yield return null;
+		GameManager.Instance.CheckPlayer();
 	}
 
 	protected void Speak(string[] lines, Action preDone = null, Action done = null)
