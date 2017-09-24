@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224205773644212114}
-  - component: {fileID: 114908415357674838}
   - component: {fileID: 222410821737951620}
   - component: {fileID: 114069332285912578}
   - component: {fileID: 225196877917427986}
@@ -90,24 +89,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114908415357674838
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402517618699048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12b1acdcba240484e9ea735fb1dd03d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Status: 0
-  Animator: {fileID: 95054210510906238}
-  State: 0
-  Group: {fileID: 225196877917427986}
-  ExFuriousDialog1: []
-  ExDialog1: []
-  DudeDialog1: []
 --- !u!222 &222410821737951620
 CanvasRenderer:
   m_ObjectHideFlags: 1
