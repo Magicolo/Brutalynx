@@ -73,7 +73,7 @@ public class Boss : MonoBehaviour
 
 	void Update()
 	{
-		SetStatus(PlayerManager.Instance.ChuTuCrazy() ? Statuses.Furious : Statuses.Idle);
+		SetStatus(PlayerManager.Instance.ChuTuCrazy() ? Statuses.Panick : Statuses.Idle);
 		Room.Instance.SetState(PlayerManager.Instance.ChuTuFuckinBatShitCrazy() ? Room.Instance.FromCharacter(Type) : Room.States.Normal);
 	}
 

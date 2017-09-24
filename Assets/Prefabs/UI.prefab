@@ -2317,8 +2317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprites:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: f3ed8cb6f277998459b64d54bbc8df91, type: 3}
+  - {fileID: 21300000, guid: d8f6203cf4233444eadc809f980a6aff, type: 3}
   - {fileID: 21300000, guid: e375a28ab3184c741bb05a68dc34e358, type: 3}
   - {fileID: 21300000, guid: 40bb0d0eb003077428a98a23a427e0c3, type: 3}
   Image: {fileID: 114798428018302714}
@@ -3772,8 +3772,8 @@ RectTransform:
   - {fileID: 224512261681670116}
   - {fileID: 224242470340297362}
   - {fileID: 224554568786072464}
-  - {fileID: 224275863354832744}
   - {fileID: 224255396694146464}
+  - {fileID: 224275863354832744}
   - {fileID: 224662089779414510}
   - {fileID: 224999628946124156}
   - {fileID: 224262071873261386}
@@ -3948,7 +3948,7 @@ RectTransform:
   - {fileID: 224207639865070982}
   - {fileID: 224498278058989174}
   m_Father: {fileID: 224163345451383800}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4041,7 +4041,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224163345451383800}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

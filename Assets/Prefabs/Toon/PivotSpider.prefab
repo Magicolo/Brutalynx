@@ -78,7 +78,17 @@ MonoBehaviour:
   Type: 4
   Animator: {fileID: 95393190762047882}
   Group: {fileID: 225074842997095090}
-  Cycles: []
+  Cycles:
+  - Mushrooms: 02000000040000000600000008000000
+    Boss:
+    - Status: 0
+      Lines:
+      - 
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude: []
   LastBossAction:
     Status: 0
     Lines: []

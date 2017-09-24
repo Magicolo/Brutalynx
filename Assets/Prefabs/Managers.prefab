@@ -193,14 +193,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: deee1d910be9c3a47b5398811a393da6, type: 3}
   - {fileID: 21300000, guid: 3363c29a139adae4cb706b1a2131a431, type: 3}
   - {fileID: 21300000, guid: b720dbbfdc2c4c64cabb56a878f3e919, type: 3}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 21300000, guid: e92d4c9e217fdd7428d26cca7dc86309, type: 3}
+  - {fileID: 21300000, guid: d8655731b9e1646468a9fc1b7e5e36fe, type: 3}
+  - {fileID: 21300000, guid: 8715f333bf1ffff4eaf91a306dc76154, type: 3}
+  - {fileID: 21300000, guid: 44c35061c1251d849b724d9873c0c7cc, type: 3}
+  - {fileID: 21300000, guid: 0c65fd22f47682042b933fb8af1c7dde, type: 3}
+  - {fileID: 21300000, guid: c1b4db186ffc625439075f09a28027d6, type: 3}
+  - {fileID: 21300000, guid: dda6363f44657f745abf056bf66e1775, type: 3}
+  - {fileID: 21300000, guid: 9861c58afc17f9541b0291811468f331, type: 3}
   AvailableMushrooms: 
 --- !u!114 &114733454687160072
 MonoBehaviour:
