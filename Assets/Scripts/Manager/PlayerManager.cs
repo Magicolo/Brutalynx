@@ -54,7 +54,7 @@ public class PlayerManager : Singleton<PlayerManager>
 		Irritability = 0f;
 	}
 
-	public bool ChuTuCrazy(float threshold = 0.5f)
+	public bool ChuTuCrazy(float threshold = 0.6f)
 	{
 		var count =
 			(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +
@@ -63,7 +63,7 @@ public class PlayerManager : Singleton<PlayerManager>
 		return count >= 2;
 	}
 
-	public bool ChuTuFuckinBatShitCrazy(float threshold = 0.75f)
+	public bool ChuTuFuckinBatShitCrazy(float threshold = 0.8f)
 	{
 		var count =
 			(Mathf.Abs(Happiness) >= threshold ? 1 : 0) +

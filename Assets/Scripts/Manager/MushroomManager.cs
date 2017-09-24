@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +16,19 @@ public class MushroomManager : Singleton<MushroomManager>
 
 	public void Consume(Mushrooms mushroom)
 	{
-		// Add constant shroom effects.
+		StartCoroutine(WaitForEating(() =>
+		{
+			ApplyEffects(mushroom);
+			History.Push(mushroom);
+			IsWaiting = false;
+			listener(mushroom);
+			listener = m => { };
+			GameManager.Instance.CheckPlayer();
+		}));
+	}
+
+	void ApplyEffects(Mushrooms mushroom)
+	{
 		switch (mushroom)
 		{
 			case Mushrooms.PsilocybinCubensis_1:
@@ -96,19 +109,22 @@ public class MushroomManager : Singleton<MushroomManager>
 			default:
 				break;
 		}
-
-		History.Push(mushroom);
-		IsWaiting = false;
-		listener(mushroom);
-		listener = m => { };
-		Dude.Instance.SetState(Dude.States.Eating);
-		GameManager.Instance.CheckPlayer();
 	}
 
 	public void WaitConsumption(Action<Mushrooms> consumed)
 	{
 		listener += consumed;
 		IsWaiting = true;
+	}
+
+	IEnumerator WaitForEating(Action done)
+	{
+		Dude.Instance.SetState(Dude.States.Eating);
+
+		while (Dude.Instance.State != Dude.States.Idle)
+			yield return null;
+
+		done();
 	}
 }
 

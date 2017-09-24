@@ -1,12 +1,11 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿using System;
 using System.Collections.Generic;
-using System;
+using UnityEngine;
 
 [Serializable]
 public class VoiceData
 {
-    public CharacterType type;
-    public Boss.Statuses status;
-    public List<AudioClip> voiceSounds = new List<AudioClip>();
+	public CharacterType type;
+	public Boss.Statuses status;
+	public List<AudioClip> voiceSounds = new List<AudioClip>();
 }
