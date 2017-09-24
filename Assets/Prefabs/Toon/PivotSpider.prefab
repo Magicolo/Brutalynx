@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 225196877917427986}
   - component: {fileID: 95054210510906238}
   m_Layer: 5
-  m_Name: Wife
+  m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 224579012114380724}
   - component: {fileID: 114046868942031226}
   m_Layer: 5
-  m_Name: PivotWife
+  m_Name: PivotSpider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
