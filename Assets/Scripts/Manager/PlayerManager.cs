@@ -5,12 +5,12 @@ using UnityEngine;
 public enum Statuses
 {
 	Default,
-	Tristesse,
-	Extase,
-	Terreur,
-	Naif,
+	Depression,
+	Anxiety,
+	Terror,
+	Recklessness,
 	Rage,
-	Fanatisme,
+	Numbess,
 }
 
 public enum Traits
@@ -82,12 +82,12 @@ public class PlayerManager : Singleton<PlayerManager>
 	{
 		switch (status)
 		{
-			case Statuses.Terreur: return Confidence <= -0.5f;
+			case Statuses.Terror: return Confidence <= -0.5f;
 			case Statuses.Rage: return Irritability <= -0.5f;
-			case Statuses.Tristesse: return Happiness <= -0.5f;
-			case Statuses.Extase: return Happiness >= 0.5f;
-			case Statuses.Naif: return Confidence <= 0.5f;
-			case Statuses.Fanatisme: return Irritability >= 0.5f;
+			case Statuses.Depression: return Happiness <= -0.5f;
+			case Statuses.Anxiety: return Happiness >= 0.5f;
+			case Statuses.Recklessness: return Confidence <= 0.5f;
+			case Statuses.Numbess: return Irritability >= 0.5f;
 			case Statuses.Default: return true;
 		}
 
@@ -98,12 +98,12 @@ public class PlayerManager : Singleton<PlayerManager>
 	{
 		switch (status)
 		{
-			case Statuses.Tristesse:
-			case Statuses.Extase: return Traits.Happiness;
-			case Statuses.Terreur:
-			case Statuses.Naif: return Traits.Confidence;
+			case Statuses.Depression:
+			case Statuses.Anxiety: return Traits.Happiness;
+			case Statuses.Terror:
+			case Statuses.Recklessness: return Traits.Confidence;
 			case Statuses.Rage:
-			case Statuses.Fanatisme: return Traits.Irritability;
+			case Statuses.Numbess: return Traits.Irritability;
 			default:
 			case Statuses.Default: return Traits.None;
 		}

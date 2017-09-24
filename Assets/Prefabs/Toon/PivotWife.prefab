@@ -79,11 +79,14 @@ MonoBehaviour:
   Animator: {fileID: 95054210510906238}
   Group: {fileID: 225196877917427986}
   Cycles:
-  - Mushrooms: 04000000030000000500000006000000
+  - Mushrooms: 01000000020000000300000004000000
     Boss:
     - Status: -1
       Lines:
-      - aspfoivc
+      - "Hey Baby, why haven\u2019t you been picking up my calls?"
+      - "I mean, what good is your damn phone if half the time your stupid ass don\u2019t
+        answer it."
+      - "Don\u2019t tell me you\u2019re trying to back out of our little agreement?"
       Modifiers:
         Confidence: 0
         Happiness: 0
@@ -91,7 +94,78 @@ MonoBehaviour:
     Dude:
     - Status: 0
       Lines:
-      - vccvnrru
+      - "Sorry, I haven\u2019t been myself lately\u2026"
+    - Status: 2
+      Lines:
+      - "\u2026I\u2019ve been\u2026I\u2019ve just been sitting here, waiting\u2026waiting
+        for you."
+    - Status: 4
+      Lines:
+      - "\u2026I\u2019ve been\u2026I\u2019ve just been sitting here, waiting\u2026waiting
+        for you."
+  - Mushrooms: 05000000060000000700000008000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "Nah ah. Don\u2019t you dare try to play it smooth with me mister, my time
+        is precious and I ain\u2019t got none to waste on you."
+      - Now where the hell did you put it?
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - "I really don\u2019t feel like doing this right now, can you just come back
+        later?"
+    - Status: 2
+      Lines:
+      - "Euh\u2026.Put what, where?"
+    - Status: 3
+      Lines:
+      - "Euh\u2026.Put what, where?"
+  - Mushrooms: 090000000a0000000b0000000c000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "Look honey, I\u2019ve been pretty cool with you so far, I could make your
+        life a nightmare if I wanted to."
+      - "But tell you what, since I\u2019m in a good mood, I\u2019m gonna let you
+        off the hook\u2026 for now."
+      - But when I do come back, your ass better be ready to pay up.
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    - Status: 5
+      Lines:
+      - Are you being funny? Maybe I should just beat your ass.
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude:
+    - Status: 0
+      Lines:
+      - You were always the compassionate one.
+    - Status: 4
+      Lines:
+      - Should I pay you for that too?
+    - Status: 5
+      Lines:
+      - Should I pay you for that too?
+  - Mushrooms: 0d0000000e0000000f00000002000000
+    Boss:
+    - Status: -1
+      Lines:
+      - "My Compassion is the only thing that\u2019s keeping you alive, buddy boy. "
+      - So keep that sarcasm for yourself. Till next time.
+      Modifiers:
+        Confidence: 0
+        Happiness: 0
+        Irritability: 0
+    Dude: []
   LastBossAction:
     Status: -1
     Lines:

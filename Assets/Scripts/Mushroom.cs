@@ -33,7 +33,8 @@ public class Mushroom : MonoBehaviour
 	void Update()
 	{
 		var isEnabled = MushroomManager.Instance.IsWaiting && Index < MushroomManager.Instance.AvailableMushrooms.Length;
-		var scale = isEnabled ? Vector3.one : Vector3.zero;
+		var sine = Mathf.Sin(Time.time * 2f + GetHashCode()) * 0.1f + 1f;
+		var scale = isEnabled ? Vector3.one * sine : Vector3.zero;
 		transform.localScale = Vector3.Lerp(transform.localScale, scale, Time.deltaTime * 5f);
 		Button.enabled = isEnabled;
 

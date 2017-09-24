@@ -21,6 +21,12 @@ public class GameManager : Singleton<GameManager>
 		StartCoroutine(GameRoutine());
 	}
 
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+			SceneManager.LoadScene("Title");
+	}
+
 	IEnumerator VomitRoutine()
 	{
 		Dude.Instance.SetState(Dude.States.Vomitting);

@@ -305,7 +305,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "CR\xC9DITS"
+  m_Text: CREDITS
 --- !u!222 &512759239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -394,7 +394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &664685696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -483,9 +483,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.15
-  m_Text: "Sylvain Savard - Art\nJeremy Dumouchel - Art, Son, Musique\nKevin McNally-Gagnon
-    - Programmation\nVincent Laforest - Conception, \xC9criture\nJean-Baptiste Muni\xE8res
-    - Programmation"
+  m_Text: "Sylvain Savard - Art\nJeremy Dumouchel - Art, SFX, Music, Writing\nKevin
+    McNally-Gagnon - Programming\nJean-Baptiste Muni\xE8res - Programming\nVincent
+    Laforest - Design, Writing"
 --- !u!222 &686903418
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -603,6 +603,116 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Credits: {fileID: 940122722}
   Instructions: {fileID: 664685695}
+--- !u!1 &906681378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 906681380}
+  - component: {fileID: 906681379}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &906681379
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 906681378}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243925302817834714, guid: 4257abcb73671bb4fb1263c1ba4c9a9b,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 028ec04e869e9c949babfc31e71b92e3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!4 &906681380
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 906681378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.562078, y: -0.30716503, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &940122722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,11 +1126,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Les champignons ont diff\xE9rentes propri\xE9t\xE9s qui affectent le psych\xE9
-    de leur consommateur de mani\xE8re positive ou parfois troublante.\n\nSeulement
-    un m\xE9lange \xE9quilibr\xE9 de champignons assurera votre sant\xE9 mentale lors
-    des \xE9preuves difficiles de la vie.\n\nPour plus d'informations, consultez le
-    manuel."
+  m_Text: 'Mushrooms have different attributes which will affect you mental state
+    in either a good or troublesome way.
+
+
+    Choose the right mushrooms to find your best possible outcome.
+
+
+    For more information, please consult the manual.'
 --- !u!222 &1225137766
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1591,7 +1704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31, y: 122}
+  m_AnchoredPosition: {x: 0, y: 122}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678888877
@@ -1620,13 +1733,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click Gauche
+  m_Text: Left Click
 --- !u!222 &1678888878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1775,19 +1888,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8cd4268709243fa448681a30045ab3c4, type: 3}
+    m_Font: {fileID: 12800000, guid: 0dd3a7fac51d85f4e8949fe279b35076, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 30
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "D\xC9MARRER"
+  m_Text: BEGIN
 --- !u!222 &1871177618
 CanvasRenderer:
   m_ObjectHideFlags: 0
