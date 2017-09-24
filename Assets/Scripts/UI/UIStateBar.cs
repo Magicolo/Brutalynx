@@ -13,53 +13,72 @@ public class UIStateBar : MonoBehaviour
 	public Image HandleLeft;
 	public Image HandleRight;
 
-	public Color Left = Color.red;
-	public Color Right = Color.green;
+    public Gradient colorGradient;
 
-	public float StateValue;
+	public Color Current;
+
 	public string StateName;
+
+    public float StateValue;
+    public float StateDestination;
+    public float Speed;
+    
 
 	public void Init()
 	{
 		TextName.text = StateName;
-		HandleLeft.color = Left;
-		HandleRight.color = Right;
 	}
 
-	private void Awake()
+    private void Start()
+    {
+        Init();
+    }
+
+    private void Awake()
 	{
 		Init();
 	}
 
-	public void SetState(double stateValue)
+	public void SetState(float stateValue)
 	{
-		float value = Mathf.Clamp((float)stateValue, -1f, 1f);
-
-		ScrollLeft.size = -value;
-		ScrollRight.size = value;
-
+		float StateDestination = Mathf.Clamp(stateValue, -1f, 1f);
 	}
+
+    public float CalculPourcent(float min, float max, float abs)
+    {
+        return (abs-min) / (max-min);
+    }
 
 	private void Update()
 	{
-		switch (status)
-		{
-			case Status.Confidence:
-				SetState(PlayerManager.Instance.Confidence);
-				break;
-			case Status.Happiness:
-				SetState(PlayerManager.Instance.Happiness);
-				break;
-			case Status.Alertness:
-				SetState(PlayerManager.Instance.Alertness);
-				break;
-		}
-	}
+
+        switch (status)
+        {
+            case Status.Confidence:
+                SetState((float)PlayerManager.Instance.Confidence);
+                break;
+            case Status.Happiness:
+                SetState((float)PlayerManager.Instance.Happiness);
+                break;
+            case Status.Alertness:
+                SetState((float)PlayerManager.Instance.Alertness);
+                break;
+        }
+        StateValue = Mathf.Lerp(StateValue, StateDestination, Time.deltaTime * Speed);
+
+        float abs = Mathf.Abs(StateValue);
+
+        Current = colorGradient.Evaluate(abs);
+
+        ScrollLeft.size = -StateValue;
+        ScrollRight.size = StateValue;
+        HandleLeft.color = Current;
+        HandleRight.color = Current;
+    }
 
 	private void OnValidate()
 	{
-		SetState(StateValue);
 		Init();
-	}
+    }
 
 }
